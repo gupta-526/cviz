@@ -10,7 +10,7 @@ app.config['PROPAGATE_EXCEPTIONS']=True
 
 @app.route("/")
 def insult():
-    return "Hello!"
+    return app.root_path
 # @app.route("/index", methods=["GET", "POST"])
 # def index():
 #     notes={"name":"First",
