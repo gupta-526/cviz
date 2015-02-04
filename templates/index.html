@@ -11,6 +11,33 @@ The extend statement tells this file inherit the general html elements from the 
     Author: {{ notes.author }} <br><br>  <!-- placeholder for dynamic content -->
     {{ notes.content }}  
   </p>  
-  <hr>  
+  <hr> 
+  <hr>
+  <form id="userInput">
+	Title:
+	<input type="text"	id="title"required placeholder="userTitle" value=''autofocus> 
+	<br><br>
+	Subject A
+	<input type="text" id="subjectA"required placeholder="subjectOne">
+	Subject B
+	<input type="text" id="subjectB"required placeholder="subjectTwo">
+	<br><br>
+	Level One Function Color
+	<input type="color" id="pfColor" placeholder="colorL1">
+	
+	Neutral Color <!-- wherever fold change is less that 4 -->
+	<input type="color" id="nColor" placeholder="colorN">
+	<br><br>
+	Color for Subject A
+	<input type="color" id="aColor" placeholder="colorA">
+	
+	Color for Subject B
+	<input type="color" id="bColor" placeholder="colorB">
+	<br><br>
+	<input type="submit" value="Submit"> 
+	<input type=reset>
+	
+	</form> 
+  <hr>
 
 {% endblock %}
