@@ -39,5 +39,63 @@ The extend statement tells this file inherit the general html elements from the 
 	
 	</form> 
   <hr>
+  <hr>
+  <script>
+	//	checking the number of files uploaded
+	function updateNumber() {
+  		var nBytes = 0,
+	  		oFiles = document.getElementById("uploadInput").files,
+	  		nFiles = oFiles.length;
+  			for (var nFileId = 0; nFileId < nFiles; nFileId++) {
+				nBytes += oFiles[nFileId].size;
+  			}
+ 
+  
+  		document.getElementById("fileNum").innerHTML = nFiles;
+  
+	}
+	// opening and reading the uploaded file as text
+	var openFile = function(event) {
+		var input = event.target;
+
+		var reader = new FileReader();
+		reader.onload = function(){
+	  	var text = reader.result;
+	  	console.log(reader.result.substring(0, 200));
+		};
+			reader.readAsText(input.files[0]);
+  	};
+  
+	}
+	</script>
+	<p> Upload Required File</p>
+	<form name="uploadForm">
+	<p>
+	<input id="uploadInput" type="file" accept='text/plain' name="myFiles" onchange="updateNumber();" multiple onchange='openFile(event)'> selected files: <span id="fileNum">0</span>
+	</p>
+	<!--	BUttons of the input -->
+	<input type="submit" value="Send file" id="fileSend" onclick="ImageFunction()"/>&nbsp
+	<input type="reset" value="Reset"/>
+
+	</form>
+
+	<script>
+		function readingFile(evt) {
+			var f=evt.target.files[0];
+			if(!f.type.match('text.*')) {
+				continue;
+		
+			var reader=new FileReader();
+			}
+			else{
+				alert("Please upload a text file");
+			}
+		
+			}
+	document.getElementById('file').addEventListener('change',readingFile, false);
+	
+	
+	</script>
+	<hr>
 
 {% endblock %}
