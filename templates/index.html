@@ -5,14 +5,16 @@ The extend statement tells this file inherit the general html elements from the 
 {% block content %}  
 
   <h2>Welcome to MyNote</h2>  
+<!-- 
   <hr>  
   <p>  
-    <b>{{ notes.name }}</b> <br>  <!-- placeholder for dynamic content -->
-    Author: {{ notes.author }} <br><br>  <!-- placeholder for dynamic content -->
+    <b>{{ notes.name }}</b> <br>  <!~~ placeholder for dynamic content ~~>
+    Author: {{ notes.author }} <br><br>  <!~~ placeholder for dynamic content ~~>
     {{ notes.content }}  
   </p>  
   <hr> 
   <hr>
+ -->
   <form id="userInput">
 	Title:
 	<input type="text"	id="title"required placeholder="userTitle" value=''autofocus> 
@@ -68,7 +70,7 @@ The extend statement tells this file inherit the general html elements from the 
   
 	}
 	</script>
-	<p> Upload Required File</p>
+	<p> Upload Required File (json format)</p>
 	<form name="uploadForm">
 	<p>
 	<input id="uploadInput" type="file" accept='text/plain' name="myFiles" onchange="updateNumber();" multiple onchange='openFile(event)'> selected files: <span id="fileNum">0</span>
@@ -79,23 +81,6 @@ The extend statement tells this file inherit the general html elements from the 
 
 	</form>
 
-	<script>
-		function readingFile(evt) {
-			var f=evt.target.files[0];
-			if(!f.type.match('text.*')) {
-				continue;
-		
-			var reader=new FileReader();
-			}
-			else{
-				alert("Please upload a text file");
-			}
-		
-			}
-	document.getElementById('file').addEventListener('change',readingFile, false);
-	
-	
-	</script>
 	<hr>
 
 {% endblock %}
