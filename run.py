@@ -8,14 +8,14 @@ app = Flask(__name__)
 #Keeps Flask from swallowing error messages
 app.config['PROPAGATE_EXCEPTIONS']=True
 
-@app.route('/')
+@app.route("/")
 @app.route("/index", methods=["GET", "POST"])
 def index():
     notes={"name":"First",
             "author":"Niharika",
             "content":"Text from content field"
         }
-    return render_template("index.html",notes = notes)
+    return render_template("templates/index.html",notes = notes)
     
 #def insult():
     #return "Hello!"
