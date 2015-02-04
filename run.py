@@ -9,16 +9,17 @@ app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS']=True
 
 @app.route("/")
-@app.route("/index", methods=["GET", "POST"])
-def index():
-    notes={"name":"First",
-            "author":"Niharika",
-            "content":"Text from content field"
-        }
-    return render_template("templates/index.html",notes = notes)
+def insult():
+    return "Hello!"
+# @app.route("/index", methods=["GET", "POST"])
+# def index():
+#     notes={"name":"First",
+#             "author":"Niharika",
+#             "content":"Text from content field"
+#         }
+#     return render_template("index.html",notes = notes)
     
-#def insult():
-    #return "Hello!"
+
 #@app.route("/hello/<name>")
 #def input(name=None):
     #return render_template('inputData.html')
