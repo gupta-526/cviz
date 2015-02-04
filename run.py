@@ -8,7 +8,7 @@ app = Flask(__name__)
 #Keeps Flask from swallowing error messages
 app.config['PROPAGATE_EXCEPTIONS']=True
 
-@app.route("/")
+@app.route('/')
 @app.route("/index", methods=["GET", "POST"])
 def index():
     notes={"name":"First",
@@ -23,5 +23,5 @@ def index():
 #def input(name=None):
     #return render_template('inputData.html')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run()
