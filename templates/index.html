@@ -4,15 +4,17 @@ The extend statement tells this file inherit the general html elements from the 
 {% extends "base.html" %}  
 {% block content %}  
 
-  <h2>Welcome to MyNote</h2>  
+  <!-- <h2>Welcome to MyNote</h2>   -->
+<!-- 
   <hr>  
   <p>  
-    <b>{{ notes.name }}</b> <br>  <!-- placeholder for dynamic content -->
-    Author: {{ notes.author }} <br><br>  <!-- placeholder for dynamic content -->
+    <b>{{ notes.name }}</b> <br>  <!~~ placeholder for dynamic content ~~>
+    Author: {{ notes.author }} <br><br>  <!~~ placeholder for dynamic content ~~>
     {{ notes.content }}  
   </p>  
   <hr> 
   <hr>
+ -->
 
   <form id="userInput">
 	Title:
@@ -23,7 +25,7 @@ The extend statement tells this file inherit the general html elements from the 
 	Subject B
 	<input type="text" id="subjectB"required placeholder="subjectTwo">
 	<br><br>
-	Level One Function Color
+	Level Zero Color
 	<input type="color" id="pfColor" placeholder="colorL1">
 	
 	Neutral Color <!-- wherever fold change is less that 4 -->
