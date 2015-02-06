@@ -11,10 +11,7 @@ app.config['PROPAGATE_EXCEPTIONS']=True
 @app.route("/")
 @app.route("/index", methods=["GET", "POST"])
 def index():
-    # notes={"name":"First",
-#             "author":"Niharika",
-#             "content":"Text from content field" 
-        #}
+    
     return render_template("index.html" )
     
 # def insult():
