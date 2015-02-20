@@ -5,7 +5,7 @@ The extend statement tells this file inherit the general html elements from the 
 {% block content %}  
 	<title> Data Visualization </title>
 	<head></head>
-   <form action="http://webapp-kumarlab.rhcloud.com/zoomable.html" id="userInput" method="GET">
+   <form action="http://webapp-kumarlab.rhcloud.com/zoomable.html" id="userInput" method="POST">
 	Title:
 	<input type="text"	id="title" required placeholder="userTitle" value=''autofocus> 
 	<br><br>
@@ -30,7 +30,9 @@ The extend statement tells this file inherit the general html elements from the 
 	<p> Upload Required File (json format)</p>
 	<form name="uploadForm">
 	<p>
-	<input id="uploadInput" type="file" accept='text/plain' name="myFiles" onchange="updateNumber();" multiple onchange='openFile(event)'> selected files: <span id="fileNum">0</span>
+	<input id="uploadInput" type="file" accept='text/plain' name="myFiles" onchange="updateNumber();" multiple onchange='openFile(event)'> 
+	Selected Files: 
+	<span id="fileNum">0</span>
 	</p>
 	<!--	BUttons of the input -->
 
