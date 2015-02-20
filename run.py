@@ -13,10 +13,10 @@ app.config['PROPAGATE_EXCEPTIONS']=True
 def index():
     
     return render_template("index.html" )
-@app.route("/zoomable", methods=["GET", "POST"])
-def zoomable():
-    
-    return render_template("zoomable.html" )
+# @app.route("/zoomable", methods=["GET", "POST"])
+# def zoomable():
+#     
+#     return render_template("zoomable.html" )
     
 # def insult():
 #     return app.root_path
