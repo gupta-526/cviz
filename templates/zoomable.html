@@ -1,0 +1,160 @@
+{% extends "base.html" %}  
+{% block content %} 
+<!-- 
+<!DOCTYPE html>
+<meta charset="utf-8">
+ -->
+<head><title>Fold Change: Never Smokers vs Smokers - Bacterial Metagenome Data</title></head>
+<style>
+
+.node {
+  cursor: pointer;
+  fill: rgb(31, 119, 180);
+//  fill-opacity: .25;
+  stroke: rgb(31, 119, 180);
+  stroke-width: 1px;
+}
+
+.node:hover {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node--root {
+  stroke: #777;
+  stroke-width: 2px;
+  fill: rgb(31, 119, 180);
+}
+
+.node--leaf-neutral {
+  /* fill: white; */
+  fill:getElementById("nColor");
+}
+
+.node--leaf-smoker {
+  /* fill: #ff0000; */
+  fill:getElementById("aColor");
+  fill-opacity: 1;
+}
+
+.node--leaf-nonsmoker {
+  /* fill: #00ff00; */
+  fill:getElementById("bColor");
+  fill-opacity: 1;
+}
+
+.label {
+  font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+}
+
+.label,
+.node--root,
+.node--leaf {
+  pointer-events: none;
+}
+
+</style>
+<body>
+<h2 style='text-align: center;'>Fold Change: Never Smokers vs Smokers</h2>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var margin = 10,
+    outerDiameter = 1280,//960,
+    innerDiameter = outerDiameter - margin - margin;
+
+var x = d3.scale.linear()
+    .range([0, innerDiameter]);
+
+var y = d3.scale.linear()
+    .range([0, innerDiameter]);
+
+var color = d3.scale.linear()
+    .domain([-1, 5])
+    .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+    .interpolate(d3.interpolateHcl);
+    
+var pack = d3.layout.pack()
+    .padding(2)
+    .size([innerDiameter, innerDiameter])
+    .value(function(d) { 
+               d.type = 'never-smoker';
+               if (Math.round(Math.abs(d.size)) <  2)
+                   d.type = 'neutral';
+               else if (d.size < -1)
+                   d.type = 'smoker';
+               return Math.abs(d.size); 
+           });    
+
+var svg = d3.select("body").append("svg")
+    .attr("width", outerDiameter)
+    .attr("height", outerDiameter)
+  .append("g")
+    .attr("transform", "translate(" + margin + "," + margin + ")");
+
+d3.json("RA_fold_change_HS-HNS.json", function(error, root) {
+  var focus = root,
+      nodes = pack.nodes(root);
+
+  svg.append("g").selectAll("circle")
+      .data(nodes)
+    .enter().append("circle")
+      .attr("class", function(d) {
+                         if (!d.parent)
+                            return "node node--root"
+                         if (d.children) 
+                             return "node";
+                         if (d.type === 'smoker')
+                             return "node node--leaf-smoker";
+                         if (d.type === 'never-smoker')
+                             return "node node--leaf-nonsmoker";
+                         if (d.type === 'neutral')
+                             return "node node--leaf-neutral"; 
+                     })
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      .attr("r", function(d) { return d.r; })
+      .style("fill", function(d) { return d.children ? color(d.depth) : null; })
+      .on("click", function(d) { return zoom(focus == d ? root : d); });
+
+  svg.append("g").selectAll("text")
+      .data(nodes)
+    .enter().append("text")
+      .attr("class", "label")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+      .style("display", function(d) { return d.parent === root ? null : "none"; })
+      .text(function(d) { return d.name + (d.children ? "" : ": " + Number((Math.abs(d.size)).toFixed(1))); });
+
+  d3.select(window)
+      .on("click", function() { zoom(root); });
+
+  function zoom(d, i) {
+    var focus0 = focus;
+    focus = d;
+
+    var k = innerDiameter / d.r / 2;
+    x.domain([d.x - d.r, d.x + d.r]);
+    y.domain([d.y - d.r, d.y + d.r]);
+    d3.event.stopPropagation();
+
+    var transition = d3.selectAll("text,circle").transition()
+        .duration(d3.event.altKey ? 7500 : 750)
+        .attr("transform", function(d) { return "translate(" + x(d.x) + "," + y(d.y) + ")"; });
+
+    transition.filter("circle")
+        .attr("r", function(d) { return k * d.r; });
+
+    transition.filter("text")
+      .filter(function(d) { return d.parent === focus || d.parent === focus0; })
+        .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+        .each("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+        .each("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+  }
+});
+
+d3.select(self.frameElement).style("height", outerDiameter + "px");
+
+</script>
+{% endblock %}

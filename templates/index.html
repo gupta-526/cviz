@@ -5,14 +5,14 @@ The extend statement tells this file inherit the general html elements from the 
 {% block content %}  
 	<title> Data Visualization </title>
 	<head></head>
-   <form id="userInput">
+   <form action="zoomable.html" id="userInput" method="GET">
 	Title:
-	<input type="text"	id="title"required placeholder="userTitle" value=''autofocus> 
+	<input type="text"	id="title" required placeholder="userTitle" value=''autofocus> 
 	<br><br>
 	Subject A
-	<input type="text" id="subjectA"required placeholder="subjectOne">
+	<input type="text" id="subjectA" required placeholder="subjectOne">
 	Subject B
-	<input type="text" id="subjectB"required placeholder="subjectTwo">
+	<input type="text" id="subjectB" required placeholder="subjectTwo">
 	<br><br>
 	Level Zero Color
 	<input type="color" id="pfColor" placeholder="colorL1">
@@ -35,7 +35,7 @@ The extend statement tells this file inherit the general html elements from the 
 	<!--	BUttons of the input -->
 
 	<input type="submit" value="Submit"> 
-	<input type=reset>
+	<input type="reset" value="Reset">
 	
 	</form> 
  
@@ -55,8 +55,6 @@ The extend statement tells this file inherit the general html elements from the 
 	}
 	// opening and reading the uploaded file as text
   	};
-  
-	}
 	</script>
 	
 	<hr>
