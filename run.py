@@ -26,7 +26,7 @@ def zoomable():
        colorA=request.form['aColor']
        colorB=request.form['bColor']
 	    
-	return render_template("zoomable.html" )
+    return render_template("zoomable.html" )
 	
 # def insult():
 #	  return app.root_path
