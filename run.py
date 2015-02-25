@@ -18,6 +18,7 @@ def index():
 @app.route("/zoomable.html", methods=["GET", "POST"])
 def zoomable():
 	if request.method=='POST':
+	
     	title=request.form['title']
     	subA=request.form['subjectA']
     	subB=request.form['subjectB']
