@@ -24,22 +24,17 @@ def index():
 	
 @app.route("/zoomable.html", methods=["GET", "POST"])
 def zoomable():
-    # if request.method=='POST':
-#        title=request.form['title']
-#        subA=request.form['subjectA']
-#        subB=request.form['subjectB']
-#        lvZero=request.form['pfColor']
-#        neutralColor=request.form['nColor']
-#        colorA=request.form['aColor']
-#        colorB=request.form['bColor']
-# 	    
+    if request.method=='POST':
+       title=request.form['title']
+       subA=request.form['subjectA']
+       subB=request.form['subjectB']
+       lvZero=request.form['pfColor']
+       neutralColor=request.form['nColor']
+       colorA=request.form['aColor']
+       colorB=request.form['bColor']
+       	    
     return render_template("zoomable.html" )
 	
-# def insult():
-#	  return app.root_path
-#@app.route("/hello/<name>")
-#def input(name=None):
-	#return render_template('inputData.html')
 
 if __name__ == '__main__':
 	app.run()
