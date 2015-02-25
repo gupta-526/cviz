@@ -13,7 +13,7 @@ app.config['PROPAGATE_EXCEPTIONS']=True
 def index():
     
     return render_template("index.html" )
-@app.route("/zoomable/", methods=["GET", "POST"])
+@app.route("http://webapp-kumarlab.rhcloud.com/zoomable.html", methods=["GET", "POST"])
 def zoomable():
     
     return render_template("zoomable.html" )
