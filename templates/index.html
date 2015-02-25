@@ -30,35 +30,20 @@ The extend statement tells this file inherit the general html elements from the 
 	<p> Upload Required File (json format)</p>
 	<form name="uploadForm">
 	<p>
-	<input id="uploadInput" type="file" accept='text/plain' name="myFiles" onchange="updateNumber();" multiple onchange='openFile(event)'> 
-	Selected Files: 
-	<span id="fileNum">0</span>
+	<input id="uploadInput" type="file"  name="myFiles"  > 
+	
 	</p>
 	<!--	BUttons of the input -->
 
-	<input type="submit" value="Submit"> 
+	<button onclick="OpenNewPage()">Submit</button>
 	<input type="reset" value="Reset">
 	
 	</form> 
- 
-  <script>
-	//	checking the number of files uploaded
-	function updateNumber() {
-  		var nBytes = 0,
-	  		oFiles = document.getElementById("uploadInput").files,
-	  		nFiles = oFiles.length;
-  			for (var nFileId = 0; nFileId < nFiles; nFileId++) {
-				nBytes += oFiles[nFileId].size;
-  			}
- 
-  
-  		document.getElementById("fileNum").innerHTML = nFiles;
-  
-	}
-	// opening and reading the uploaded file as text
-  	};
+ 	<script>
+ 	function OpenNewPage(){
+ 		outputWindow=window.open("", "outputWindow", "width=400, height=400");
+ 	}
 	</script>
-	
 	<hr>
 
 {% endblock %}
