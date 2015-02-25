@@ -28,18 +28,18 @@
 
 .node--leaf-neutral {
   /* fill: white; */
-  fill:getElementById("nColor");
+  fill:{{neutralColor}};
 }
 
 .node--leaf-smoker {
   /* fill: #ff0000; */
-  fill:getElementById("aColor");
+  fill:{{colorA}};
   fill-opacity: 1;
 }
 
 .node--leaf-nonsmoker {
   /* fill: #00ff00; */
-  fill:getElementById("bColor");
+  fill:{{colorB}};
   fill-opacity: 1;
 }
 
@@ -57,7 +57,7 @@
 
 </style>
 <body>
-<h2 style='text-align: center;'>Fold Change: Never Smokers vs Smokers</h2>
+<h2 style='text-align: center;'>{{title}}</h2>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -80,11 +80,11 @@ var pack = d3.layout.pack()
     .padding(2)
     .size([innerDiameter, innerDiameter])
     .value(function(d) { 
-               d.type = 'never-smoker';
+               d.type = {{subB}};
                if (Math.round(Math.abs(d.size)) <  2)
                    d.type = 'neutral';
                else if (d.size < -1)
-                   d.type = 'smoker';
+                   d.type = {{subA}};
                return Math.abs(d.size); 
            });    
 
