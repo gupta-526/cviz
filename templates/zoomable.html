@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
  -->
-<head><title>Fold Change: Never Smokers vs Smokers - Bacterial Metagenome Data</title></head>
+<head><title>{{title}}</title></head>
 <style>
 
 .node {
@@ -106,10 +106,10 @@ d3.json("RA_fold_change_HS-HNS.json", function(error, root) {
                             return "node node--root"
                          if (d.children) 
                              return "node";
-                         if (d.type === 'smoker')
-                             return "node node--leaf-smoker";
-                         if (d.type === 'never-smoker')
-                             return "node node--leaf-nonsmoker";
+                         if (d.type === {{subA}})
+                             return "node node--leaf-{{subA}}";
+                         if (d.type === {{subB}})
+                             return "node node--leaf-{{subB}}";
                          if (d.type === 'neutral')
                              return "node node--leaf-neutral"; 
                      })

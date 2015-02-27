@@ -7,35 +7,38 @@ The extend statement tells this file inherit the general html elements from the 
 	<head></head>
    <form action="http://webapp-kumarlab.rhcloud.com/zoomable.html" id="userInput" method="POST">
 	Title:
-	<input type="text"	id="title" required placeholder="userTitle" value=''autofocus> 
+	<input type="text"	name="title" required placeholder="userTitle" value=''autofocus> 
 	<br><br>
 	Subject A
-	<input type="text" id="subjectA" required placeholder="subjectOne">
+	<input type="text" name="subjectA" required placeholder="subjectOne">
 	Subject B
-	<input type="text" id="subjectB" required placeholder="subjectTwo">
+	<input type="text" name="subjectB" required placeholder="subjectTwo">
 	<br><br>
 	Level Zero Color
-	<input type="color" id="pfColor" placeholder="colorL1">
+	<input type="color" name="pfColor" placeholder="colorL1">
 	
 	Neutral Color <!-- wherever fold change is less that 4 -->
-	<input type="color" id="nColor" placeholder="colorN">
+	<input type="color" name="nColor" placeholder="colorN">
 	<br><br>
 	Color for Subject A
-	<input type="color" id="aColor" placeholder="colorA">
+	<input type="color" name="aColor" placeholder="colorA">
 	
 	Color for Subject B
-	<input type="color" id="bColor" placeholder="colorB">
+	<input type="color" name="bColor" placeholder="colorB">
 	<br><br>
+<!-- 
+	</form>
 	
+	<form name="uploadForm" method="POST">
+ -->
 	<p> Upload Required File (json format)</p>
-	<form name="uploadForm">
 	<p>
 	<input id="uploadInput" type="file"  name="myFiles"  > 
 	
 	</p>
 	<!--	BUttons of the input -->
 
-	<button onclick="OpenNewPage()">Submit</button>
+	<input type="submit" value="Submit">
 	<input type="reset" value="Reset">
 	
 	</form> 
