@@ -32,8 +32,11 @@ def zoomable():
 #        neutralColor=request.form['nColor']
 #        colorA=request.form['aColor']
 #        colorB=request.form['bColor']
-#        	    
-    return render_template("zoomable.html" )
+#     
+       	    
+    return render_template("zoomable.html", title=title, subA=subA, 
+                            subB=subB, neutralColor=neutralColor, 
+                            colorA=colorA, colorB=colorB )
 	
 if __name__ == '__main__':
 	app.run()
