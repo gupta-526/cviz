@@ -7,11 +7,6 @@ from flask import url_for
 from werkzeug import SharedDataMiddleware
 from werkzeug import secure_filename
 
-app.add_url_rule('/uploads/<filename>', 'uploaded_file',
-                 build_only=True)
-app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
-    '/uploads':  app.config['UPLOAD_FOLDER']
-})
 
 UPLOAD_FOLDER="/"
 
@@ -20,6 +15,11 @@ ALLOWED_EXTENSIONS='json'
 app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.add_url_rule('/uploads/<filename>', 'uploaded_file',
+                 build_only=True)
+app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
+    '/uploads':  app.config['UPLOAD_FOLDER']
+})
 
 def allowed_file(filename):
     return '.' in filename and \
