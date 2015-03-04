@@ -36,11 +36,10 @@ def index():
 	
 @app.route("/zoomable.html", methods=["GET", "POST"])
 def zoomable():
-  	    file = request.files['myFile']
-  	    if file and allowed_file(file.filename):
-            filename=secure_filename(file.filename)
-            return redirect(url_for('uploaded_file',
-                                    filename=filename))
+    file = request.files['myFile']
+    if file and allowed_file(file.filename):
+    filename=secure_filename(file.filename)
+    
     return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                             subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                             colorA=request.form['aColor'], colorB=request.form['bColor'], 
