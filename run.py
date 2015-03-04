@@ -13,7 +13,7 @@ app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
     '/uploads':  app.config['UPLOAD_FOLDER']
 })
 
-UPLOAD_FOLDER="/app"
+UPLOAD_FOLDER="/"
 
 ALLOWED_EXTENSIONS='json'
 
