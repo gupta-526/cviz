@@ -20,7 +20,7 @@ def zoomable():
   	    
     return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                             subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                            colorA=request.form['aColor'], colorB=request.form['bColor'], reqFile=request.file['myFiles'] )
+                            colorA=request.form['aColor'], colorB=request.form['bColor'], reqFile=request.files['myFiles'] )
 	
 if __name__ == '__main__':
 	app.run()
