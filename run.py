@@ -15,7 +15,7 @@ ALLOWED_EXTENSIONS='json'
 app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.add_url_rule('/uploads/<filename>', 'uploaded_file',
+app.add_url_rule('/uploads/myFiles', 'zoomable',
                  build_only=True)
 app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
     '/uploads':  app.config['UPLOAD_FOLDER']
@@ -36,15 +36,16 @@ def index():
 	
 @app.route("/zoomable.html", methods=["GET", "POST"])
 def zoomable():
-    file = request.files['myFile']
+
+    file = request.files['myFiles']
     if file and allowed_file(file.filename):
         filename=secure_filename(file.filename)
     
     return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                             subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                             colorA=request.form['aColor'], colorB=request.form['bColor'], 
-                            reqFile=redirect(url_for('uploaded_file',
-                                    filename=filename)))
+                            reqFile=url_for('zoomable',
+                                    filename=filename))
 	
 if __name__ == '__main__':
 	app.run()
