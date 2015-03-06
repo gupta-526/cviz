@@ -51,8 +51,8 @@ def uploaded_File():
     file = request.files['myFiles']
     if file and allowed_file(file.myFiles):
         filename=secure_filename(file.myFiles)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], myFiles))
-    return url_for('uploaded_file', myFiles=myFiles)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    return url_for('uploaded_file', filename=filename)
 
        
     
