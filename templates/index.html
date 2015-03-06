@@ -5,7 +5,7 @@ The extend statement tells this file inherit the general html elements from the 
 {% block content %}  
 	<title> Data Visualization </title>
 	<head></head>
-   <form action="zoomable.html" id="userInput" method="POST" enctype="multipart/form-data">
+   <form action="zoomable" id="userInput" method="POST" enctype="multipart/form-data">
 	Title:
 	<input type="text"	name="title" required placeholder="userTitle" value=''autofocus> 
 	<br><br>
@@ -26,6 +26,10 @@ The extend statement tells this file inherit the general html elements from the 
 	Color for Subject B
 	<input type="color" name="bColor" placeholder="colorB">
 	<br><br>
+	
+	Please select the type of figure
+	<input type="radio" name="simple" value="simple" checked>Circle Packing
+	<input type="radio" name="zoomable" value="zoomable" checked>Zoomable Circle Packing
 <!-- 
 	</form>
 	
