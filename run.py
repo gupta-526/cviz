@@ -39,31 +39,22 @@ def index():
 
 	
     return render_template("index.html" )
-# def uploaded_File():
-#     file = request.files['myFiles']
-#     if file and allowed_file(file.filename):
-#         filename=secure_filename(file.filename)
-#         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-#     return url_for('uploaded_file', filename=filename)
-# 
-# 
+
 # def getModelType():
 #     model=request.form['simple']
 #     if(model=='simple')
 #         return redirect('/simple')
 #     else 
 #         return redirect('/zoomable')
-    
-        
 
-	
-# def uploaded_File():
-#     file = request.files['myFiles']
-#     if file and allowed_file(file.filename):
-#         filename=secure_filename(file.filename)
-#         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-#         return url_for('uploaded_file', filename=filename)
-#         
+def uploaded_File():
+    file = request.files['myFiles']
+    if file and allowed_file(file.filename):
+        filename=secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    return url_for('uploaded_file', filename=filename)
+
+       
     
 @app.route("/zoomable", methods=["GET", "POST"])
 def zoomable():
@@ -71,7 +62,7 @@ def zoomable():
    
     return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                             subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                            colorA=request.form['aColor'], colorB=request.form['bColor'], reqFile=url_for(request.files['myFiles'])
+                            colorA=request.form['aColor'], colorB=request.form['bColor'], reqFile=uploaded_File())
 	
 if __name__ == '__main__':
 	app.run()
