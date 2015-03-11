@@ -11,7 +11,7 @@ from werkzeug import secure_filename
  #get the upload function in a separate function so that zoomable isnt doing so many things
  #a different form for the upload files?? if so how to link the rest of the data you get from index
  #pass file name/url/path to the d3.js location required. 
-UPLOAD_FOLDER="/"
+
 
 
 
@@ -66,6 +66,11 @@ def zoomable():
     return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                             subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                             colorA=request.form['aColor'], colorB=request.form['bColor'], reqFile=upload())
-	
+
+@app.route("/simple", methods=["GET","POST"])
+def simple():
+    return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
+                            subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
+                            colorA=request.form['aColor'], colorB=request.form['bColor'], reqFile=upload())
 if __name__ == '__main__':
 	app.run()
