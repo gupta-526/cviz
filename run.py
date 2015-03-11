@@ -19,7 +19,7 @@ app = Flask(__name__)
 #Keeps Flask from swallowing error messages
 app.config['PROPAGATE_EXCEPTIONS']=True
 app.config['UPLOAD_FOLDER'] = 'uploads/'
-app.config['ALLOWED_EXTENSIONS='json'
+app.config['ALLOWED_EXTENSIONS']='json'
 
 # app.add_url_rule('/uploads/myFiles', 'zoomable',
 #                  build_only=True)
