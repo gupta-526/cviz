@@ -19,7 +19,7 @@ app = Flask(__name__)
 #Keeps Flask from swallowing error messages
 app.config['PROPAGATE_EXCEPTIONS']=True
 app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
-url=url_for['UPLOAD_FOLDER']);
+url=url_for(['UPLOAD_FOLDER']);
 print "url for upload folder= "%url;
 
 app.config['ALLOWED_EXTENSIONS']='json'
