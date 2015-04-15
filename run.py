@@ -19,7 +19,9 @@ app = Flask(__name__)
 #Keeps Flask from swallowing error messages
 app.config['PROPAGATE_EXCEPTIONS']=True
 app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
-print url_for['UPLOAD_FOLDER']);
+url=url_for['UPLOAD_FOLDER']);
+print "url for upload folder= "%url;
+
 app.config['ALLOWED_EXTENSIONS']='json'
 
 # app.add_url_rule('/uploads/myFiles', 'zoomable',
@@ -54,7 +56,9 @@ def upload():
     if file and allowed_file(file.filename):
         filename=secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        print url_for('uploaded_file', filename=filename)
+        url2= url_for('uploaded_file', filename=filename) 
+        print "url for upload folder= "%url2;
+    return rl_for('uploaded_file', filename=filename) 
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
