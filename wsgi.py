@@ -18,6 +18,5 @@ from run import app as application
 #
 if __name__ == '__main__':
     from wsgiref.simple_server import make_server
-    httpd = make_server('webapp-kumarlab.rhcloud.com', 8080, application)
     # Wait for a single request, serve it and quit.
-    httpd.serve_forever()
+    make_server(HOST_NAME, PORT, application.app).serve_forever()
