@@ -57,7 +57,7 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(2,2)");
 
 //d3.json("partial.json", function(error, root) {
-d3.json("fold_change_HNS_NSDS.json", function(error, root) {
+d3.json({{reqFile}}, function(error, root) {
   var node = svg.datum(root).selectAll(".node")
       .data(pack.nodes)
     .enter().append("g")
