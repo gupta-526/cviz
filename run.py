@@ -18,7 +18,7 @@ from werkzeug import secure_filename
 app = Flask(__name__)
 with app.app_context():
     #Keeps Flask from swallowing error messages
-    app.config['SERVER_NAME']='localhost:8051'
+    app.config['SERVER_NAME']='webapp-kumarlab.rhcloud.com:8080'
     app.config['PROPAGATE_EXCEPTIONS']=True
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     url=url_for(['UPLOAD_FOLDER']);
