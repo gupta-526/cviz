@@ -5,34 +5,42 @@ The extend statement tells this file inherit the general html elements from the 
 {% block content %}  
 	<title> Data Visualization </title>
 	<head></head>
-   <form action="upload" id="userInput" method="POST" enctype="multipart/form-data">
-	Title:
-	<input type="text"	name="title" required placeholder="userTitle" value=''autofocus> 
+   <form action="{{url_for('upload')}}" id="userInput" method="POST" enctype="multipart/form-data">
+	Title:<br>
+	<input type="text"	id"title" required placeholder="userTitle" value=''autofocus> 
 	<br><br>
 	Subject A
-	<input type="text" name="subjectA" required placeholder="subjectOne">
+	<input type="text" id="subjectA" required placeholder="subjectOne">
 	Subject B
-	<input type="text" name="subjectB" required placeholder="subjectTwo">
+	<input type="text" id="subjectB" required placeholder="subjectTwo">
 	<br><br>
 
 	Neutral Color <!-- wherever fold change is less that 4 -->
-	<input type="color" name="nColor" placeholder="colorN">
+	<input type="color" id="nColor" placeholder="colorN">
 	<br><br>
 	Color for Subject A
-	<input type="color" name="aColor" placeholder="colorA">
+	<input type="color" id="aColor" placeholder="colorA"><br>
 	
 	Color for Subject B
-	<input type="color" name="bColor" placeholder="colorB">
+	<input type="color" id="bColor" placeholder="colorB">
 	<br><br>
-	
-	Please select the type of figure
-	<input type="radio" name="simple" value="simple">Circle Packing
-	<input type="radio" name="zoomable" value="zoomable">Zoomable Circle Packing
+	<!-- RADIO BUTTON GROUP-ADD -->
+	<radiogroup>
+	Please select the type of figure<br>
+	<!-- 
+<radio id="simple" label="Simple Circle Packing"/>
+	<radio id="zoomable" label="Zoomable Circle Packing" selected="true"/>
+ -->
+	<input type="radio" name="imageType" value="simple" >Circle Packing<br>
+	<input type="radio" name="imageType" value="zoomable" >Zoomable Circle Packing
+
+	</radiogroup>
 <!-- 
 	</form>
 	
 	<form name="uploadForm" method="POST">
  -->
+ 	<br><br>
 	<p> Upload Required File (json format)</p>
 	<p>
 	<input id="uploadInput" type="file"  name="myFiles"  > 

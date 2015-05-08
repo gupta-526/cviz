@@ -1,5 +1,7 @@
 #!/usr/bin/python
 import os
+import imp
+import sys
 
 virtenv = os.path.join(os.environ.get('OPENSHIFT_PYTHON_IP','.'), 'virtenv')
 virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
@@ -19,4 +21,5 @@ from run import app as application
 if __name__ == '__main__':
     from wsgiref.simple_server import make_server
     # Wait for a single request, serve it and quit.
-    make_server(HOST_NAME, PORT, application.app).serve_forever()
+    #make_server(HOST_NAME, PORT, application.app).serve_forever()
+    make_server('localhost', '5000', application.app).serve_forever()
