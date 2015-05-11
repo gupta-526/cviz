@@ -29,7 +29,7 @@ with app.app_context():
     #files=UploadSet('files',FILE)   
     #url=url_for(['UPLOAD_FOLDER']);
     #print "url for upload folder= "%url;
-    app.add_url_rule('/uploads/myFiles', 'zoomable',
+    #app.add_url_rule('/uploads/myFiles', 'zoomable',
                       build_only=True) 
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
         '/':  app.config['UPLOAD_FOLDER']
@@ -48,17 +48,17 @@ with app.app_context():
 
         return render_template("index.html" )
 
-    # def getModelType():
-    #    imageType=request.form['imageType']
+    def getModelType():
+       imageType=request.form['imageType']
     #     print type(imageType)
-        # if(imageType=='simple'):
-    #         app.add_url_rule('/uploads/myFiles', 'simple',
-    #                   build_only=True) 
-    #         return redirect('/simple')
-    #     else:
-    #         app.add_url_rule('/uploads/myFiles', 'zoomable',
-    #                   build_only=True) 
-    #         return redirect('/zoomable')
+        if(imageType=='simple'):
+            app.add_url_rule('/uploads/myFiles', 'simple',
+                       build_only=True) 
+             return redirect('/simple')
+        else:
+             app.add_url_rule('/uploads/myFiles', 'zoomable',
+                       build_only=True) 
+             return redirect('/zoomable')
 
     @app.route('/upload', methods=['POST'])
     def upload():
@@ -66,8 +66,8 @@ with app.app_context():
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return url_for('uploaded_file', filename=filename) 
-
+            url=url_for('uploaded_file', filename=filename) 
+        return redirect('/zoomable',302)
         # if 'myFiles' in request.files:
     #         filename=files.save(request.files['myFiles'])
     #         rec=File(filename=filename, user=g.user.id)
