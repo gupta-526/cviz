@@ -6,27 +6,28 @@ The extend statement tells this file inherit the general html elements from the 
 	<title> Data Visualization </title>
 	<head></head>
    <form action="{{url_for('upload')}}" id="userInput" method="POST" enctype="multipart/form-data">
-	Title:<br>
-	<input type="text"	id"title" required placeholder="userTitle" value=''autofocus> 
-	<br><br>
-	Subject A
-	<input type="text" id="subjectA" required placeholder="subjectOne">
-	Subject B
-	<input type="text" id="subjectB" required placeholder="subjectTwo">
-	<br><br>
-
-	Neutral Color <!-- wherever fold change is less that 4 -->
-	<input type="color" id="nColor" placeholder="colorN">
-	<br><br>
-	Color for Subject A
-	<input type="color" id="aColor" placeholder="colorA"><br>
-	
-	Color for Subject B
-	<input type="color" id="bColor" placeholder="colorB">
-	<br><br>
+	<p><label>Title:</label><br>
+	<input type="text"	id"title" required placeholder="userTitle" value=''autofocus> </p>
+	<!-- <br><br> -->
+	<p><label>Subject A</label>
+	<input type="text" id="subjectA" required placeholder="subjectOne"></p>
+	<p><label>Subject B</label>
+	<input type="text" id="subjectB" required placeholder="subjectTwo"></p>
+	<!-- <br><br> -->
+	<p><label>Neutral Color</label> <!-- wherever fold change is less that 4 -->
+	<input type="color" id="nColor" placeholder="colorN"></p>
+	<!-- <br><br> -->
+	<p><label>Color for Subject A</label>
+	<input type="color" id="aColor" placeholder="colorA"></p>
+	<!-- <br> -->
+	<p><label>Color for Subject B</label>
+	<input type="color" id="bColor" placeholder="colorB"></p>
+	<!-- <br><br> -->
 	<!-- RADIO BUTTON GROUP-ADD -->
+	<p>
 	<radiogroup>
-	Please select the type of figure<br>
+	<label>Please select the type of figure</label>
+	<br>
 	<!-- 
 <radio id="simple" label="Simple Circle Packing"/>
 	<radio id="zoomable" label="Zoomable Circle Packing" selected="true"/>
@@ -35,13 +36,14 @@ The extend statement tells this file inherit the general html elements from the 
 	<input type="radio" name="imageType" value="zoomable" >Zoomable Circle Packing
 
 	</radiogroup>
+	</p>
 <!-- 
 	</form>
 	
 	<form name="uploadForm" method="POST">
  -->
  	<br><br>
-	<p> Upload Required File (json format)</p>
+	<p> <label>Upload Required File (json format)</label></p>
 	<p>
 	<input id="uploadInput" type="file"  name="myFiles"  > 
 	
