@@ -21,7 +21,7 @@ with app.app_context():
     #Keeps Flask from swallowing error messages
     #print current_app.name
     
-    app.config['SERVER_NAME']='circlepacking.local:8080'
+    app.config['SERVER_NAME']='circlePacking.local:8080'
 app.config['PROPAGATE_EXCEPTIONS']=True
 app.config['UPLOAD_FOLDER'] = os.path.join(os.environ.get('OPENSHIFT_DATA_DIR'),'uploads/')
 #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
