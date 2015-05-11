@@ -66,7 +66,7 @@ with app.app_context():
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect('uploaded_file(filename)') 
+        return redirect(uploaded_file(filename)) 
         # return redirect('/zoomable',302)
         # if 'myFiles' in request.files:
     #         filename=files.save(request.files['myFiles'])
