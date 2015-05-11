@@ -23,7 +23,7 @@ with app.app_context():
     
     app.config['SERVER_NAME']='http://webapp-kumarlab.rhcloud.com:8080'
 app.config['PROPAGATE_EXCEPTIONS']=True
-app.config['UPLOAD_FOLDER'] = os.path.join(os.environ.get['OPENSHIFT_DATA_DIR'],'uploads/')
+app.config['UPLOAD_FOLDER'] = os.path.join(os.environ.get('OPENSHIFT_DATA_DIR'),'uploads/')
 #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
 app.config['ALLOWED_EXTENSIONS']='json'
 #files=UploadSet('files',FILE)   
