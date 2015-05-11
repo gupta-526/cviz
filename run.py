@@ -50,14 +50,14 @@ def index():
 # def getModelType():
     imageType=request.form['imageType']
 #     print type(imageType)
-    if(imageType=='simple'):
-        app.add_url_rule('/uploads/myFiles', 'simple',
-                  build_only=True) 
-        return redirect('/simple')
-    else:
-        app.add_url_rule('/uploads/myFiles', 'zoomable',
-                  build_only=True) 
-        return redirect('/zoomable')
+    # if(imageType=='simple'):
+#         app.add_url_rule('/uploads/myFiles', 'simple',
+#                   build_only=True) 
+#         return redirect('/simple')
+#     else:
+#         app.add_url_rule('/uploads/myFiles', 'zoomable',
+#                   build_only=True) 
+#         return redirect('/zoomable')
 
 @app.route('/upload', methods=['POST'])
 def upload():
