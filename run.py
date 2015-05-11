@@ -21,7 +21,7 @@ with app.app_context():
     #Keeps Flask from swallowing error messages
     #print current_app.name
     
-    app.config['SERVER_NAME']='http://webapp-kumarlab.rhcloud.com:8080'
+    #app.config['SERVER_NAME']='http://webapp-kumarlab.rhcloud.com:8080'
     app.config['PROPAGATE_EXCEPTIONS']=True
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
