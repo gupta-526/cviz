@@ -60,7 +60,7 @@ with app.app_context():
 #                        build_only=True) 
 #              return redirect('/zoomable')
 
-    @app.route('/upload', methods=['POST'])
+    @app.route('/upload/zoomable', methods=['POST'])
     def upload():
         file = request.files['myFiles']
         if file and allowed_file(file.filename):
@@ -73,7 +73,7 @@ with app.app_context():
 #     def uploaded_file(filename):
 #         return send_from_directory(app.config['UPLOAD_FOLDER'],filename)    
 
-    @app.route("/upload/zoomable", methods=["GET", "POST"])
+    @app.route("/zoomable", methods=["GET", "POST"])
     def zoomable():
 
 
