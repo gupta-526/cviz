@@ -66,14 +66,14 @@ with app.app_context():
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('zoomable(filename)'))
+        return redirect(url_for('zoomable',filename=filename))
         # return redirect('zoomable')
    
     # @app.route('/uploads/<filename>')
 #     def uploaded_file(filename):
 #         return send_from_directory(app.config['UPLOAD_FOLDER'],filename)    
 
-    @app.route("/zoomable", methods=["GET", "POST"])
+    @app.route('/zoomable/<filename>', methods=["GET", "POST"])
     def zoomable(filename):
 
 
