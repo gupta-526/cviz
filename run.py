@@ -25,7 +25,7 @@ with app.app_context():
     app.config['PROPAGATE_EXCEPTIONS']=True
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
-    app.config['ALLOWED_EXTENSIONS']='json'
+    app.config['ALLOWED_EXTENSIONS']=set(['json','jpg','jpeg'])
     #files=UploadSet('files',FILE)   
     #url=url_for(['UPLOAD_FOLDER']);
     #print "url for upload folder= "%url;
@@ -66,16 +66,11 @@ with app.app_context():
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(uploaded_file(filename)) 
-        # return redirect('/zoomable',302)
-        # if 'myFiles' in request.files:
-    #         filename=files.save(request.files['myFiles'])
-    #         rec=File(filename=filename, user=g.user.id)
-    #         rec.stire()
-    #     re
+        return redirect(url_for('upload_fille',filename=filename)) 
+   
     @app.route('/uploads/<filename>')
     def uploaded_file(filename):
-        return url_for((send_from_directory(app.config['UPLOAD_FOLDER'],filename)),filename=filename)    
+        return send_from_directory(app.config['UPLOAD_FOLDER'],filename)    
 
     @app.route("/zoomable", methods=["GET", "POST"])
     def zoomable():
