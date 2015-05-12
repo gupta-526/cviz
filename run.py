@@ -66,11 +66,11 @@ with app.app_context():
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return url_for('upload',filename=filename) 
+        return filename 
    
-    @app.route('/uploads/<filename>')
-    def uploaded_file(filename):
-        return send_from_directory(app.config['UPLOAD_FOLDER'],filename)    
+    # @app.route('/uploads/<filename>')
+#     def uploaded_file(filename):
+#         return send_from_directory(app.config['UPLOAD_FOLDER'],filename)    
 
     @app.route("/zoomable", methods=["GET", "POST"])
     def zoomable():
@@ -78,7 +78,8 @@ with app.app_context():
 
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                                colorA=request.form['aColor'], colorB=request.form['bColor'], reqFile=upload())
+                                colorA=request.form['aColor'], colorB=request.form['bColor'], 
+                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],upload()))
 
     @app.route("/simple", methods=["GET","POST"])
     def simple():
