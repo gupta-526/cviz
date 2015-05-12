@@ -29,7 +29,7 @@ with app.app_context():
     #files=UploadSet('files',FILE)   
     #url=url_for(['UPLOAD_FOLDER']);
     #print "url for upload folder= "%url;
-    app.add_url_rule('/upload', 'zoomable',
+    app.add_url_rule('/upload', '/zoomable',
                       build_only=True) 
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
         '/':  app.config['UPLOAD_FOLDER']
@@ -67,13 +67,13 @@ with app.app_context():
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return filename 
-        redirect('zoomable')
+        # return redirect('zoomable')
    
     # @app.route('/uploads/<filename>')
 #     def uploaded_file(filename):
 #         return send_from_directory(app.config['UPLOAD_FOLDER'],filename)    
 
-    @app.route("/zoomable", methods=["GET", "POST"])
+    @app.route("/upload/zoomable", methods=["GET", "POST"])
     def zoomable():
 
 
