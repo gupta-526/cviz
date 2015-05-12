@@ -29,7 +29,7 @@ with app.app_context():
     #files=UploadSet('files',FILE)   
     #url=url_for(['UPLOAD_FOLDER']);
     #print "url for upload folder= "%url;
-    app.add_url_rule('/uploads/myFiles', 'zoomable',
+    app.add_url_rule('/upload', 'zoomable',
                       build_only=True) 
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
         '/':  app.config['UPLOAD_FOLDER']
