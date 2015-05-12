@@ -60,13 +60,13 @@ with app.app_context():
 #                        build_only=True) 
 #              return redirect('/zoomable')
 
-    @app.route('/upload/zoomable', methods=['POST'])
+    @app.route('/upload', methods=['POST'])
     def upload():
         file = request.files['myFiles']
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return filename 
+        return redirect('zoomable',filename=filename) 
         # return redirect('zoomable')
    
     # @app.route('/uploads/<filename>')
@@ -74,7 +74,7 @@ with app.app_context():
 #         return send_from_directory(app.config['UPLOAD_FOLDER'],filename)    
 
     @app.route("/zoomable", methods=["GET", "POST"])
-    def zoomable():
+    def zoomable(filename):
 
 
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
@@ -83,10 +83,12 @@ with app.app_context():
                                 reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],upload()))
 
     @app.route("/simple", methods=["GET","POST"])
-    def simple():
+    def simple(filename):
+    
         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                                colorA=request.form['aColor'], colorB=request.form['bColor'], reqFile=upload())
+                                colorA=request.form['aColor'], colorB=request.form['bColor'], 
+                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],upload()))
 if __name__ == '__main__':
     app.debug=true
     #app.run(host='0.0.0.0', port=int("5000"))
