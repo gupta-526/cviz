@@ -74,7 +74,7 @@ with app.app_context():
 #         return send_from_directory(app.config['UPLOAD_FOLDER'],filename)    
 
     @app.route('/zoomable/<filename>', methods=["GET", "POST"])
-    def zoomable():
+    def zoomable(filename):
 
 
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
