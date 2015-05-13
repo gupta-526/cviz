@@ -5,6 +5,7 @@ from flask import request
 from flask import redirect
 from flask import current_app
 from flask import url_for
+from flask import flash
 from flask import send_from_directory
 from werkzeug import SharedDataMiddleware
 from werkzeug import secure_filename
