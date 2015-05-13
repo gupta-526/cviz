@@ -82,7 +82,7 @@ with app.app_context():
                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
                                 reqFile=send_from_directory(app.config['UPLOAD_FOLDER'],filename)
 
-    @app.route("/simple/<filename>", methods=["GET","POST"])
+    @app.route('/simple', methods=["GET","POST"])
     def simple(filename):
     
         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
