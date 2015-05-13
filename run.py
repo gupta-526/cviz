@@ -9,7 +9,6 @@ from flask import flash
 from flask import send_from_directory
 from werkzeug import SharedDataMiddleware
 from werkzeug import secure_filename
-from flask.ext.session import Session
  #get the upload function in a separate function so that zoomable isnt doing so many things
  #a different form for the upload files?? if so how to link the rest of the data you get from index
  #pass file name/url/path to the d3.js location required. 
@@ -18,21 +17,16 @@ from flask.ext.session import Session
 
 
 app = Flask(__name__)
-sess = Session()
 with app.app_context():
-    #Keeps Flask from swallowing error messages
-    #print current_app.name
+    
     
     #app.config['SERVER_NAME']='http://webapp-kumarlab.rhcloud.com:8080'
-    app.config['PROPAGATE_EXCEPTIONS']=True
+    app.config.from_pyfile('flaskapp.cfg)
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
-    app.config['ALLOWED_EXTENSIONS']=set(['json','jpg','jpeg'])
-    #files=UploadSet('files',FILE)   
-    #url=url_for(['UPLOAD_FOLDER']);
-    #print "url for upload folder= "%url;
-    app.add_url_rule('/upload', '/zoomable',
-                      build_only=True) 
+    app.config['ALLOWED_EXTENSIONS']='json'
+    
+    app.add_url_rule('/upload', '/zoomable/<filename>',build_only=True) 
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
         '/':  app.config['UPLOAD_FOLDER']
     })
@@ -92,10 +86,5 @@ with app.app_context():
 #                                 reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
 
 if __name__ == '__main__':
-    app.secret_key="harry potter and the goblet of fire!"
-    app.config['SESSION_TYPE'] = 'filesystem'
-    sess.init_app(app)
-
-    app.debug = True
     #app.run(host='0.0.0.0', port=int("5000"))
     app.run()
