@@ -56,7 +56,7 @@ with app.app_context():
             app.add_url_rule('/uploads/myFiles', 'simple',
                             build_only=True) 
             return redirect(url_for('simple'))
-        else:
+        else if(imageType='zoomable'):
             app.add_url_rule('/uploads/myFiles', 'zoomable',
                             build_only=True) 
             return redirect(url_for('zoomable'))
@@ -71,7 +71,6 @@ with app.app_context():
 
     @app.route('/zoomable', methods=["GET", "POST"])
     def zoomable():
-        flash(os.path.join(app.config['UPLOAD_FOLDER'],filename))
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
