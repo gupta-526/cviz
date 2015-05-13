@@ -17,16 +17,18 @@ from werkzeug import secure_filename
 
 
 app = Flask(__name__)
+
 with app.app_context():
     
     
     #app.config['SERVER_NAME']='http://webapp-kumarlab.rhcloud.com:8080'
-    app.config.from_pyfile('flaskapp.cfg)
+    app.config.from_pyfile('flaskapp.cfg')
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
     app.config['ALLOWED_EXTENSIONS']='json'
     
-    app.add_url_rule('/upload', '/zoomable/<filename>',build_only=True) 
+    app.add_url_rule('/upload', '/zoomable',
+                      build_only=True) 
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
         '/':  app.config['UPLOAD_FOLDER']
     })
@@ -86,5 +88,6 @@ with app.app_context():
 #                                 reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
 
 if __name__ == '__main__':
+    app.debug = True
     #app.run(host='0.0.0.0', port=int("5000"))
     app.run()
