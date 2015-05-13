@@ -72,7 +72,7 @@ with app.app_context():
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'],
-                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],upload()))
+                                reqFile=upload())
 
     @app.route('/simple', methods=["GET","POST"])
     def simple():
@@ -80,7 +80,7 @@ with app.app_context():
         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
-                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],upload()))
+                                reqFile=upload())
 
 if __name__ == '__main__':
     app.debug = True
