@@ -56,7 +56,7 @@ with app.app_context():
             app.add_url_rule('/uploads/myFiles', 'simple',
                             build_only=True) 
             return redirect(url_for('simple'))
-        else if(imageType='zoomable'):
+        elif(imageType='zoomable'):
             app.add_url_rule('/uploads/myFiles', 'zoomable',
                             build_only=True) 
             return redirect(url_for('zoomable'))
