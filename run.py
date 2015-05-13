@@ -22,7 +22,8 @@ with app.app_context():
     
     
     #app.config['SERVER_NAME']='http://webapp-kumarlab.rhcloud.com:8080'
-    app.config.from_pyfile('flaskapp.cfg')
+    # app.config.from_pyfile('flaskapp.cfg')
+    app.config['SECRET_KEY']=os.environ.get('SECRET_KEY','harryPotterAndTheGobletOfFire')
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
     app.config['ALLOWED_EXTENSIONS']='json'
