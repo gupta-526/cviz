@@ -75,12 +75,11 @@ with app.app_context():
 
     @app.route('/zoomable/<filename>', methods=["GET", "POST"])
     def zoomable(filename):
-        flash('goes in the zoomable(filename) def')
-
+        flash(os.path.join(aap.config['UPLOAD_FOLDER'],filename))
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
-                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename)
+                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
 
     # @app.route('/simple', methods=["GET","POST"])
 #     def simple(filename):
