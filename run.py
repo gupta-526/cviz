@@ -21,15 +21,12 @@ app = Flask(__name__)
 with app.app_context():
     
     
-    #app.config['SERVER_NAME']='http://webapp-kumarlab.rhcloud.com:8080'
-    # app.config.from_pyfile('flaskapp.cfg')
+
     app.config['SECRET_KEY']=os.environ.get('SECRET_KEY','harryPotterAndTheGobletOfFire')
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
     app.config['ALLOWED_EXTENSIONS']='json'
     
-#     app.add_url_rule('/upload/myFiles', '/zoomable/<filename>',
-#                       build_only=True) 
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
         '/uploads':  app.config['UPLOAD_FOLDER']
     })
@@ -67,14 +64,14 @@ with app.app_context():
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return filename
+        return url_for('upload',filename)
+        
 
-    @app.route('/zoomable', methods=["GET", "POST"])
+    @app.route('/zoomable/test', methods=["GET", "POST"])
     def zoomable():
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                                colorA=request.form['aColor'], colorB=request.form['bColor'], 
-                                reqFile=send_from_directory(app.config['UPLOAD_FOLDER'],upload()))
+                                colorA=request.form['aColor'], colorB=request.form['bColor'])
 
     @app.route('/simple', methods=["GET","POST"])
     def simple():
