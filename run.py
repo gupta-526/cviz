@@ -28,8 +28,8 @@ with app.app_context():
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
     app.config['ALLOWED_EXTENSIONS']='json'
     
-    app.add_url_rule('/upload/myFiles', '/zoomable/<filename>',
-                      build_only=True) 
+#     app.add_url_rule('/upload/myFiles', '/zoomable/<filename>',
+#                       build_only=True) 
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
         '/uploads':  app.config['UPLOAD_FOLDER']
     })
@@ -56,7 +56,7 @@ with app.app_context():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return filename
       
-    @app.route('/getModelType', methods=['GET','POST']  
+    @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
         imageType=request.form['imageType']
         filename=upload()
