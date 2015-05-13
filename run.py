@@ -47,27 +47,28 @@ with app.app_context():
 
         return render_template("index.html" )
 
-    # def getModelType():
-#         imageType=request.form['imageType']
-#     #     print type(imageType)
-#         if(imageType=='simple'):
-#             app.add_url_rule('/uploads/myFiles', 'simple',
-#                        build_only=True) 
-#              return redirect('/simple')
-#         else:
-#              app.add_url_rule('/uploads/myFiles', 'zoomable',
-#                        build_only=True) 
-#              return redirect('/zoomable')
-
+    
     @app.route('/upload', methods=['POST'])
     def upload():
         file = request.files['myFiles']
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('zoomable',filename=filename))
+        return redirect(url_for('getModelType',filename=filename))
         # return redirect('zoomable')
-   
+      
+    @app.route('/getModelType/<filename>', methods=['GET','POST']  
+    def getModelType(filename):
+        imageType=request.form['imageType']
+        if(imageType=='simple'):
+            app.add_url_rule('/uploads/myFiles', 'simple/<filename>',
+                            build_only=True) 
+            return redirect('/simple/<filename>')
+        else:
+            app.add_url_rule('/uploads/myFiles', 'zoomable/<filename>',
+                            build_only=True) 
+            return redirect('/zoomable/<filename>')
+
     # @app.route('/uploads/<filename>')
 #     def uploaded_file(filename):
 #         return send_from_directory(app.config['UPLOAD_FOLDER'],filename)    
