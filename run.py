@@ -82,13 +82,13 @@ with app.app_context():
                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
                                 reqFile=send_from_directory(app.config['UPLOAD_FOLDER'],filename)
 
-    @app.route('/simple', methods=["GET","POST"])
-    def simple(filename):
-    
-        return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
-                                subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                                colorA=request.form['aColor'], colorB=request.form['bColor'], 
-                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
+    # @app.route('/simple', methods=["GET","POST"])
+#     def simple(filename):
+#     
+#         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
+#                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
+#                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
+#                                 reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
 if __name__ == '__main__':
     app.debug=true
     #app.run(host='0.0.0.0', port=int("5000"))
