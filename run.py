@@ -47,15 +47,7 @@ with app.app_context():
 
         return render_template("index.html" )
 
-    
-    @app.route('/upload', methods=['POST'])
-    def upload():
-        file = request.files['myFiles']
-        if file and allowed_file(file.filename):
-            filename=secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return filename
-      
+ 
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
         imageType=request.form['imageType']
@@ -68,7 +60,14 @@ with app.app_context():
             app.add_url_rule('/uploads/myFiles', 'zoomable/<filename>',
                             build_only=True) 
             return redirect(url_for('zoomable',filename=filename))
-
+    
+    @app.route('/upload', methods=['POST'])
+    def upload():
+        file = request.files['myFiles']
+        if file and allowed_file(file.filename):
+            filename=secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return filename
 
     @app.route('/zoomable/<filename>', methods=["GET", "POST"])
     def zoomable(filename):
