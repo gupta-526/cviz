@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask,session
 from flask import render_template
 from flask import request
 from flask import redirect
@@ -18,6 +18,7 @@ from werkzeug import secure_filename
 
 
 app = Flask(__name__)
+
 with app.app_context():
     #Keeps Flask from swallowing error messages
     #print current_app.name
@@ -91,5 +92,6 @@ with app.app_context():
 #                                 reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
 
 if __name__ == '__main__':
+    app.secret_key="harry potter and the goblet of fire!"
     #app.run(host='0.0.0.0', port=int("5000"))
     app.run()
