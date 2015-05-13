@@ -28,7 +28,7 @@ with app.app_context():
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
     app.config['ALLOWED_EXTENSIONS']='json'
     
-    app.add_url_rule('/upload', '/zoomable',
+    app.add_url_rule('/upload', '/zoomable/<filename>',
                       build_only=True) 
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
         '/':  app.config['UPLOAD_FOLDER']
