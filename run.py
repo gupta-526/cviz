@@ -28,10 +28,10 @@ with app.app_context():
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
     app.config['ALLOWED_EXTENSIONS']='json'
     
-    app.add_url_rule('/upload', '/zoomable/<filename>',
+    app.add_url_rule('/upload/myFiles', '/zoomable/<filename>',
                       build_only=True) 
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
-        '/':  app.config['UPLOAD_FOLDER']
+        '/uploads':  app.config['UPLOAD_FOLDER']
     })
 
     def allowed_file(filename):
@@ -80,13 +80,13 @@ with app.app_context():
                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
                                 reqFile=os.path.join(app.config['UPLOAD_FOLDER'],filename))
 
-    # @app.route('/simple', methods=["GET","POST"])
-#     def simple(filename):
-#     
-#         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
-#                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-#                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
-#                                 reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
+    @app.route('/simple/<filename>', methods=["GET","POST"])
+    def simple(filename):
+    
+        return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
+                                subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
+                                colorA=request.form['aColor'], colorB=request.form['bColor'], 
+                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
 
 if __name__ == '__main__':
     app.debug = True
