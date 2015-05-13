@@ -54,24 +54,21 @@ with app.app_context():
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('getModelType',filename=filename))
-        # return redirect('zoomable')
+        return filename
       
-    @app.route('/getModelType/<filename>', methods=['GET','POST']  
-    def getModelType(filename):
+    @app.route('/getModelType', methods=['GET','POST']  
+    def getModelType():
         imageType=request.form['imageType']
+        filename=upload()
         if(imageType=='simple'):
             app.add_url_rule('/uploads/myFiles', 'simple/<filename>',
                             build_only=True) 
-            return redirect('/simple/<filename>')
+            return redirect(url_for('simple',filename=filename))
         else:
             app.add_url_rule('/uploads/myFiles', 'zoomable/<filename>',
                             build_only=True) 
-            return redirect('/zoomable/<filename>')
+            return redirect(url_for('zoomable',filename=filename))
 
-    # @app.route('/uploads/<filename>')
-#     def uploaded_file(filename):
-#         return send_from_directory(app.config['UPLOAD_FOLDER'],filename)    
 
     @app.route('/zoomable/<filename>', methods=["GET", "POST"])
     def zoomable(filename):
