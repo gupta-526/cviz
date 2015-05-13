@@ -57,7 +57,7 @@ with app.app_context():
                             build_only=True) 
             return redirect(url_for('simple'))
         else:
-            app.add_url_rule('/uploads/myFiles', 'zoomable/',
+            app.add_url_rule('/uploads/myFiles', 'zoomable',
                             build_only=True) 
             return redirect(url_for('zoomable'))
     
@@ -75,7 +75,7 @@ with app.app_context():
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
-                                reqFile=os.path.join(app.config['UPLOAD_FOLDER'],upload()))
+                                reqFile=send_from_directory(app.config['UPLOAD_FOLDER'],upload()))
 
     @app.route('/simple', methods=["GET","POST"])
     def simple():
