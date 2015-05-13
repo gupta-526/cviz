@@ -9,7 +9,7 @@ from flask import flash
 from flask import send_from_directory
 from werkzeug import SharedDataMiddleware
 from werkzeug import secure_filename
- 
+from flask.ext.session import Session
  #get the upload function in a separate function so that zoomable isnt doing so many things
  #a different form for the upload files?? if so how to link the rest of the data you get from index
  #pass file name/url/path to the d3.js location required. 
@@ -18,7 +18,7 @@ from werkzeug import secure_filename
 
 
 app = Flask(__name__)
-
+sess = Session()
 with app.app_context():
     #Keeps Flask from swallowing error messages
     #print current_app.name
@@ -93,5 +93,9 @@ with app.app_context():
 
 if __name__ == '__main__':
     app.secret_key="harry potter and the goblet of fire!"
+    app.config['SESSION_TYPE'] = 'filesystem'
+    sess.init_app(app)
+
+    app.debug = True
     #app.run(host='0.0.0.0', port=int("5000"))
     app.run()
