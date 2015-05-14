@@ -40,13 +40,13 @@ with app.app_context():
 
         return render_template("index.html" )
 
-    @app.route('/upload', methods=["GET",'POST'])
+    @app.route('/upload', methods=['POST'])
     def upload():
         file = request.files['myFiles']
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return  filename
+        return  url_for(os.path.join(app.config['UPLOAD_FOLDER'], filename)
         
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
