@@ -32,8 +32,8 @@ The extend statement tells this file inherit the general html elements from the 
 <radio id="simple" label="Simple Circle Packing"/>
 	<radio id="zoomable" label="Zoomable Circle Packing" selected="true"/>
  -->
-	<input type="radio" name="imageType" value="simple" >Circle Packing<br>
-	<input type="radio" name="imageType" value="zoomable" >Zoomable Circle Packing
+	<input type="radio" id="imageType" value="simple" >Circle Packing<br>
+	<input type="radio" id="imageType" value="zoomable" >Zoomable Circle Packing
 
 	</radiogroup>
 	</p>
@@ -45,7 +45,7 @@ The extend statement tells this file inherit the general html elements from the 
  	<br><br>
 	<p> <label>Upload Required File (json format)</label></p>
 	<p>
-	<input id="uploadInput" type="file"  name="myFiles"  > 
+	<input type="file"  id="myFiles" name="uploadInput"  > 
 	
 	</p>
 	<!--	BUttons of the input -->
