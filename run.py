@@ -47,22 +47,15 @@ with app.app_context():
       if file and allowed_file(file.filename):
           filename=secure_filename(file.filename)
           file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-#             path=url_for(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-      return  filename
+          path=url_for(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+      return  path
     
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
         imageType=request.form['imageType']
         # filename=upload()
         if(imageType=='simple'):
-#              def simple():
-#                 title=request.form['title']
-#                 subA=request.form['subjectA']
-#                 subB=request.form['subjectB']
-#                 neutralColor=request.form['nColor']
-#                 colorA=request.form['aColor']
-#                 colorB=request.form['bColor']
-#                 reqFile=''   
+   
             return render_template("simple.html",title=request.form['title'],
                                    subA=request.form['subjectA'],
                                    subB=request.form['subjectB'],
@@ -71,14 +64,7 @@ with app.app_context():
                                    colorB=request.form['bColor'],
                                    reqFile=upload())
         elif(imageType=='zoomable'):
-#             def zoomable():
-#                 title=request.form['title']
-#                 subA=request.form['subjectA']
-#                 subB=request.form['subjectB']
-#                 neutralColor=request.form['nColor']
-#                 colorA=request.form['aColor']
-#                 colorB=request.form['bColor']
-#                 reqFile=''
+
             return render_template("zoomable.html",title=request.form['title'],
                                        subA=request.form['subjectA'],
                                        subB=request.form['subjectB'],
