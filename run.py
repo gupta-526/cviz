@@ -47,7 +47,7 @@ with app.app_context():
       if file and allowed_file(file.filename):
           filename=secure_filename(file.filename)
           file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-          path=url_for(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+          path=os.path.join(app.config['UPLOAD_FOLDER'], filename))
       return  path
     
     @app.route('/getModelType', methods=['GET','POST'])  
