@@ -63,18 +63,25 @@ with app.app_context():
 
     @app.route('/zoomable', methods=["GET", "POST"])
     def zoomable():
-        return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
-                                subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                                colorA=request.form['aColor'], colorB=request.form['bColor'],
-                                reqFile='')
+        title=request.form['title']
+        subA=request.form['subjectA']
+        subB=request.form['subjectB']
+        neutralColor=request.form['nColor']
+        colorA=request.form['aColor']
+        colorB=request.form['bColor']
+        reqFile=''
+        return render_template("zoomable.html")
 
     @app.route('/simple', methods=["GET","POST"])
     def simple():
-    
-        return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
-                                subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                                colorA=request.form['aColor'], colorB=request.form['bColor'],
-                                reqFile='')
+        title=request.form['title']
+        subA=request.form['subjectA']
+        subB=request.form['subjectB']
+        neutralColor=request.form['nColor']
+        colorA=request.form['aColor']
+        colorB=request.form['bColor']
+        reqFile=''    
+        return render_template("simple.html")
 
 if __name__ == '__main__':
     app.debug = True
