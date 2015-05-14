@@ -21,8 +21,8 @@ with app.app_context():
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
     app.config['ALLOWED_EXTENSIONS']=set(['json'])
-    app.add_url_rule('/', 'simple',simple, build_only=True)
-    app.add_url_rule('/', 'zoomable',zoomable, build_only=True
+    app.add_url_rule('/getModel', 'simple',simple, build_only=True)
+    app.add_url_rule('/getModel', 'zoomable',zoomable, build_only=True
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
         '/uploads':  app.config['UPLOAD_FOLDER']
     })
