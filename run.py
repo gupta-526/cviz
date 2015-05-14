@@ -61,7 +61,7 @@ with app.app_context():
         return  filename
         
 
-    @app.route('/zoomable', methods=["POST"])
+    @app.route('/zoomable', methods=["GET"])
     def zoomable():
         title=request.form['title']
         subA=request.form['subjectA']
