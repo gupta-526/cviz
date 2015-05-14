@@ -43,10 +43,12 @@ with app.app_context():
     @app.route('/upload', methods=['POST'])
     def upload():
         file = request.files['myFiles']
+        path=""
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return  url_for(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            path=url_for(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return  path
         
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
