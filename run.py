@@ -45,15 +45,15 @@ with app.app_context():
         imageType=request.form['imageType']
         filename=upload()
         if(imageType=='simple'):
-             app.add_url_rule('/getModelType/upload', 'simple',simple,
-                             build_only=True) 
-            return redirect(url_for('simple',filename=filename))
+            app.add_url_rule('/', 'simple',simple,
+                               build_only=True) 
+            return redirect(url_for('simple'))
         elif(imageType=='zoomable'):
-             app.add_url_rule('/getModelType/upload', 'zoomable',zoomable,
-                             build_only=True) 
-            return redirect(url_for('zoomable',filename=filename))
+            app.add_url_rule('/', 'zoomable',zoomable,
+                               build_only=True) 
+            return redirect(url_for('zoomable'))
     
-    @app.route('/upload', methods=['POST'])
+#     @app.route('/upload', methods=['POST'])
     def upload():
         file = request.files['myFiles']
         if file and allowed_file(file.filename):
@@ -68,8 +68,8 @@ with app.app_context():
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'])
 
-    @app.route('/simple/<filename>', methods=["GET","POST"])
-    def simple(filename):
+    @app.route('/simple', methods=["GET","POST"])
+    def simple():
     
         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
