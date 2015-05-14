@@ -40,16 +40,7 @@ with app.app_context():
 
         return render_template("index.html" )
 
-    @app.route('/upload', methods=['POST'])
-    def upload():
-        file = request.files['myFiles']
-        filename=""
-        if file and allowed_file(file.filename):
-            filename=secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-#             path=url_for(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return  filename
-        
+    
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
         imageType=request.form['imageType']
@@ -78,9 +69,18 @@ with app.app_context():
                 return render_template("zoomable.html",title=title,subA=subA,
                                         neutralColor=neutralColor,colorA=colorA,
                                         colorB=colorB,reqFile=reqFile)
-        return 'OK'
+
     
-  
+      @app.route('/upload', methods=['POST'])
+        def upload():
+            file = request.files['myFiles']
+            filename=""
+            if file and allowed_file(file.filename):
+                filename=secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    #             path=url_for(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return  filename
+        
         
 
     # @app.route('/zoomable', methods=["GET","POST"])
