@@ -62,7 +62,7 @@ with app.app_context():
                 neutralColor=request.form['nColor']
                 colorA=request.form['aColor']
                 colorB=request.form['bColor']
-                reqFile=upload()   
+                reqFile=''   
                 return render_template("simple.html",title=title,subA=subA,
                                         neutralColor=neutralColor,colorA=colorA,
                                         colorB=colorB,reqFile=reqFile)
@@ -74,7 +74,7 @@ with app.app_context():
                 neutralColor=request.form['nColor']
                 colorA=request.form['aColor']
                 colorB=request.form['bColor']
-                reqFile=upload()
+                reqFile=''
                 return render_template("zoomable.html",title=title,subA=subA,
                                         neutralColor=neutralColor,colorA=colorA,
                                         colorB=colorB,reqFile=reqFile)
