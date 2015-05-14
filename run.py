@@ -63,7 +63,7 @@ with app.app_context():
 
     @app.route('/zoomable', methods=["GET","POST"])
     def zoomable():
-        title=request.form.get['title']
+        title=request.form['title']
         subA=request.form['subjectA']
         subB=request.form['subjectB']
         neutralColor=request.form['nColor']
