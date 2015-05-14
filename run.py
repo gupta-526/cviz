@@ -21,8 +21,8 @@ with app.app_context():
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
     app.config['ALLOWED_EXTENSIONS']=set(['json'])
-    app.add_url_rule('/getModel', 'simple',simple, build_only=True)
-    app.add_url_rule('/getModel', 'zoomable',zoomable, build_only=True
+    app.add_url_rule('/getModel', 'simple',simpple,build_only=True)
+    app.add_url_rule('/getModel', 'zoomable',zoomable,build_only=True)
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
         '/uploads':  app.config['UPLOAD_FOLDER']
     })
@@ -65,14 +65,16 @@ with app.app_context():
     def zoomable():
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                                colorA=request.form['aColor'], colorB=request.form['bColor'])
+                                colorA=request.form['aColor'], colorB=request.form['bColor'],
+                                reqFile='')
 
     @app.route('/simple', methods=["GET","POST"])
     def simple():
     
         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                                colorA=request.form['aColor'], colorB=request.form['bColor'])
+                                colorA=request.form['aColor'], colorB=request.form['bColor'],
+                                reqFile='')
 
 if __name__ == '__main__':
     app.debug = True
