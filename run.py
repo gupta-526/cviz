@@ -70,7 +70,9 @@ with app.app_context():
         colorA=request.form['aColor']
         colorB=request.form['bColor']
         reqFile=''
-        return render_template("zoomable.html")
+        return render_template("zoomable.html",title=title,subA=subA,
+                                neutralColor=neutralColor,colorA=colorA,colorB=colorB,
+                                reqFile=reqFile)
 
     @app.route('/simple', methods=["GET","POST"])
     def simple():
