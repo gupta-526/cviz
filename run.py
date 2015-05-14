@@ -59,7 +59,7 @@ with app.app_context():
         if file and allowed_file(file.filename):
             filename=secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return filename
+        return os.path.join(app.config['UPLOAD_FOLDER'], filename)
         
 
     @app.route('/zoomable/<filename>', methods=["GET", "POST"])
@@ -67,7 +67,7 @@ with app.app_context():
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'],
-                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
+                                reqFile=filename)
 
     @app.route('/simple/<filename>', methods=["GET","POST"])
     def simple(filename):
@@ -75,7 +75,7 @@ with app.app_context():
         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
-                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
+                                reqFile=filename)
 
 if __name__ == '__main__':
     app.debug = True
