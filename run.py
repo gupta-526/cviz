@@ -45,13 +45,13 @@ with app.app_context():
         imageType=request.form['imageType']
         filename=upload()
         if(imageType=='simple'):
-            app.add_url_rule('/uploads/myFiles', 'simple',
-                            build_only=True) 
-            return redirect(url_for('simple'))
+#             app.add_url_rule('/getModelType/upload', 'simple',simple,
+#                             build_only=True) 
+            return redirect(url_for('simple',filename=filename))
         elif(imageType=='zoomable'):
-            app.add_url_rule('/uploads/myFiles', 'zoomable',
-                            build_only=True) 
-            return redirect(url_for('zoomable'))
+#             app.add_url_rule('/getModelType/upload', 'zoomable',zoomable,
+#                             build_only=True) 
+            return redirect(url_for('zoomable',filename=filename))
     
     @app.route('/upload', methods=['POST'])
     def upload():
@@ -62,20 +62,20 @@ with app.app_context():
         return filename
         
 
-    @app.route('/zoomable', methods=["GET", "POST"])
-    def zoomable():
+    @app.route('/zoomable/<filename>', methods=["GET", "POST"])
+    def zoomable(filename):
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'],
-                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],upload()))
+                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
 
-    @app.route('/simple', methods=["GET","POST"])
-    def simple():
+    @app.route('/simple/<filename>', methods=["GET","POST"])
+    def simple(filename):
     
         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
-                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],upload()))
+                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],filename))
 
 if __name__ == '__main__':
     app.debug = True
