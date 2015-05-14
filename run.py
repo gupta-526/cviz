@@ -78,7 +78,7 @@ with app.app_context():
                 return render_template("zoomable.html",title=title,subA=subA,
                                         neutralColor=neutralColor,colorA=colorA,
                                         colorB=colorB,reqFile=reqFile)
-            # return redirect(url_for('zoomable'))
+        return 'OK'
     
   
         
