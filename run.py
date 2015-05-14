@@ -40,7 +40,7 @@ with app.app_context():
 
         return render_template("index.html" )
 
-   @app.route('/upload', methods=['POST'])
+    @app.route('/upload', methods=['POST'])
     def upload():
         file = request.files['myFiles']
         if file and allowed_file(file.filename):
