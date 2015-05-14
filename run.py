@@ -9,11 +9,6 @@ from flask import flash
 from flask import send_from_directory
 from werkzeug import SharedDataMiddleware
 from werkzeug import secure_filename
- #get the upload function in a separate function so that zoomable isnt doing so many things
- #a different form for the upload files?? if so how to link the rest of the data you get from index
- #pass file name/url/path to the d3.js location required. 
-
-
 
 
 app = Flask(__name__)
@@ -21,7 +16,7 @@ app = Flask(__name__)
 with app.app_context():
     
     
-
+    app.config['TRAP_BAD_REQUEST_ERRORS']=True
     app.config['SECRET_KEY']=os.environ.get('SECRET_KEY','harryPotterAndTheGobletOfFire')
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
@@ -72,7 +67,7 @@ with app.app_context():
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'],
-                                reqFile=upload())
+                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],upload()))
 
     @app.route('/simple', methods=["GET","POST"])
     def simple():
@@ -80,7 +75,7 @@ with app.app_context():
         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
                                 colorA=request.form['aColor'], colorB=request.form['bColor'], 
-                                reqFile=upload())
+                                reqFile=os.path.join(aap.config['UPLOAD_FOLDER'],upload()))
 
 if __name__ == '__main__':
     app.debug = True
