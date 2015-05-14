@@ -49,7 +49,7 @@ with app.app_context():
              
             return redirect(url_for('simple'))
         elif(imageType=='zoomable'):
-) 
+ 
             return redirect(url_for('zoomable'))
     
     @app.route('/upload', methods=['POST'])
