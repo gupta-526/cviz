@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 with app.app_context():
     
-    
+    app.config['DEBUG']=True
     app.config['TRAP_BAD_REQUEST_ERRORS']=True
     app.config['SECRET_KEY']=os.environ.get('SECRET_KEY','harryPotterAndTheGobletOfFire')
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
@@ -45,12 +45,12 @@ with app.app_context():
         imageType=request.form['imageType']
         filename=upload()
         if(imageType=='simple'):
-#             app.add_url_rule('/getModelType/upload', 'simple',simple,
-#                             build_only=True) 
+             app.add_url_rule('/getModelType/upload', 'simple',simple,
+                             build_only=True) 
             return redirect(url_for('simple',filename=filename))
         elif(imageType=='zoomable'):
-#             app.add_url_rule('/getModelType/upload', 'zoomable',zoomable,
-#                             build_only=True) 
+             app.add_url_rule('/getModelType/upload', 'zoomable',zoomable,
+                             build_only=True) 
             return redirect(url_for('zoomable',filename=filename))
     
     @app.route('/upload', methods=['POST'])
@@ -62,20 +62,18 @@ with app.app_context():
         return  filename
         
 
-    @app.route('/zoomable/<filename>', methods=["GET", "POST"])
-    def zoomable(filename):
+    @app.route('/zoomable', methods=["GET", "POST"])
+    def zoomable():
         return render_template("zoomable.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                                colorA=request.form['aColor'], colorB=request.form['bColor'],
-                                reqFile=send_from_directory(app.config['UPLOAD_FOLDER'],filename))
+                                colorA=request.form['aColor'], colorB=request.form['bColor'])
 
     @app.route('/simple/<filename>', methods=["GET","POST"])
     def simple(filename):
     
         return render_template("simple.html", title=request.form['title'], subA=request.form['subjectA'], 
                                 subB=request.form['subjectB'], neutralColor=request.form['nColor'], 
-                                colorA=request.form['aColor'], colorB=request.form['bColor'], 
-                                reqFile=send_from_directory(app.config['UPLOAD_FOLDER'],filename))
+                                colorA=request.form['aColor'], colorB=request.form['bColor'])
 
 if __name__ == '__main__':
     app.debug = True
