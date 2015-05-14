@@ -63,7 +63,7 @@ with app.app_context():
 
     @app.route('/zoomable', methods=["GET","POST"])
     def zoomable():
-        # title=request.form['title']
+        title=request.form['title']
         subA=request.form['subjectA']
         subB=request.form['subjectB']
         neutralColor=request.form['nColor']
@@ -83,7 +83,9 @@ with app.app_context():
         colorA=request.form['aColor']
         colorB=request.form['bColor']
         reqFile=''    
-        return render_template("simple.html")
+        return render_template("simple.html",title=title,subA=subA,
+                                neutralColor=neutralColor,colorA=colorA,colorB=colorB,
+                                reqFile=reqFile)
 
 if __name__ == '__main__':
     app.debug = True
