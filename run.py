@@ -46,29 +46,37 @@ with app.app_context():
         imageType=request.form['imageType']
         # filename=upload()
         if(imageType=='simple'):
-             def simple():
-                title=request.form['title']
-                subA=request.form['subjectA']
-                subB=request.form['subjectB']
-                neutralColor=request.form['nColor']
-                colorA=request.form['aColor']
-                colorB=request.form['bColor']
-                reqFile=''   
-                return render_template("simple.html",title=title,subA=subA,
-                                        neutralColor=neutralColor,colorA=colorA,
-                                        colorB=colorB,reqFile=reqFile)
+#              def simple():
+#                 title=request.form['title']
+#                 subA=request.form['subjectA']
+#                 subB=request.form['subjectB']
+#                 neutralColor=request.form['nColor']
+#                 colorA=request.form['aColor']
+#                 colorB=request.form['bColor']
+#                 reqFile=''   
+            return render_template("simple.html",title=request.form['title'],
+                                   subA=request.form['subjectA'],
+                                   subB=request.form['subjectB'],
+                                   neutralColor=request.form['nColor'],
+                                   colorA=request.form['aColor'],
+                                   colorB=request.form['bColor'],
+                                   reqFile='')
         elif(imageType=='zoomable'):
-            def zoomable():
-                title=request.form['title']
-                subA=request.form['subjectA']
-                subB=request.form['subjectB']
-                neutralColor=request.form['nColor']
-                colorA=request.form['aColor']
-                colorB=request.form['bColor']
-                reqFile=''
-                return render_template("zoomable.html",title=title,subA=subA,
-                                        neutralColor=neutralColor,colorA=colorA,
-                                        colorB=colorB,reqFile=reqFile)
+#             def zoomable():
+#                 title=request.form['title']
+#                 subA=request.form['subjectA']
+#                 subB=request.form['subjectB']
+#                 neutralColor=request.form['nColor']
+#                 colorA=request.form['aColor']
+#                 colorB=request.form['bColor']
+#                 reqFile=''
+            return render_template("zoomable.html",title=request.form['title'],
+                                       subA=request.form['subjectA'],
+                                       subB=request.form['subjectB'],
+                                       neutralColor=request.form['nColor'],
+                                       colorA=request.form['aColor'],
+                                       colorB=request.form['bColor'],
+                                       reqFile='')
 
     
     @app.route('/upload', methods=['POST'])
