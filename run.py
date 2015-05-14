@@ -53,7 +53,7 @@ with app.app_context():
                                build_only=True) 
             return redirect(url_for('zoomable'))
     
-#     @app.route('/upload', methods=['POST'])
+    @app.route('/upload', methods=['POST'])
     def upload():
         file = request.files['myFiles']
         if file and allowed_file(file.filename):
