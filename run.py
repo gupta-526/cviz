@@ -63,7 +63,7 @@ with app.app_context():
 
     @app.route('/zoomable', methods=["GET","POST"])
     def zoomable():
-        title=flask.request.form['title']
+        title=request.form.get['title']
         subA=request.form['subjectA']
         subB=request.form['subjectB']
         neutralColor=request.form['nColor']
