@@ -63,7 +63,7 @@ with app.app_context():
                 colorA=request.form['aColor']
                 colorB=request.form['bColor']
                 reqFile=''   
-             return render_template("simple.html",title=title,subA=subA,
+                return render_template("simple.html",title=title,subA=subA,
                                         neutralColor=neutralColor,colorA=colorA,
                                         colorB=colorB,reqFile=reqFile)
         elif(imageType=='zoomable'):
@@ -75,7 +75,7 @@ with app.app_context():
                 colorA=request.form['aColor']
                 colorB=request.form['bColor']
                 reqFile=''
-             return render_template("zoomable.html",title=title,subA=subA,
+                return render_template("zoomable.html",title=title,subA=subA,
                                         neutralColor=neutralColor,colorA=colorA,
                                         colorB=colorB,reqFile=reqFile)
             # return redirect(url_for('zoomable'))
