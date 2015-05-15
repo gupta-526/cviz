@@ -77,11 +77,11 @@ var pack = d3.layout.pack()
     .padding(2)
     .size([innerDiameter, innerDiameter])
     .value(function(d) { 
-               d.type = {{subB}};
+               d.type = '{{subB}}';
                if (Math.round(Math.abs(d.size)) <  2)
                    d.type = 'neutral';
                else if (d.size < -1)
-                   d.type = {{subA}};
+                   d.type = '{{subA}}';
                return Math.abs(d.size); 
            });    
 
@@ -105,7 +105,7 @@ d3.json("{{reqFile}}", function(error, root) {
                              return "node";
                          if (d.type === '{{subA}}')
                              return "node node--leaf-{{subA}}";
-                         if (d.type === {{subB}})
+                         if (d.type === '{{subB}}')
                              return "node node--leaf-{{subB}}";
                          if (d.type === 'neutral')
                              return "node node--leaf-neutral"; 
