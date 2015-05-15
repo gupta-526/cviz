@@ -64,9 +64,9 @@ d3.json("{{reqFile}}", function(error, root) {
       .attr("class", function(d) { 
                          if (d.children) 
                              return "node";
-                         if (d.type === {{subA}})
+                         if (d.type === '{{subA}}')
                              return "leafS node";
-                         if (d.type === {{subB}})
+                         if (d.type === '{{subB}}')
                              return "leafNS node";
                          if (d.type === 'neutral')
                              return "leafNeutral node"; 
