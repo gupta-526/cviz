@@ -48,8 +48,7 @@ with app.app_context():
           filename=secure_filename(file.filename)
           file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
           path=os.path.join(app.config['UPLOAD_FOLDER'], filename)
-      return  send_from_directory(app.config['UPLOAD_FOLDER'],
-                                  filename)
+      return  path
     
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
