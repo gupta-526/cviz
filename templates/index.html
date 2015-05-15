@@ -7,41 +7,34 @@ The extend statement tells this file inherit the general html elements from the 
 	<head></head>
    <form action="getModelType" id="userInput" method="POST" enctype="multipart/form-data">
 	<p><label>Title:</label><br>
-	<input type="text"	name="title" required placeholder="userTitle"> </p>
+	<input type="text"	name="title" required > </p>
 	<!-- <br><br> -->
 	<p><label>Group A (associated with positive fold change):</label><br>
-	<input type="text" name="subjectA" required placeholder="subjectOne"></p>
+	<input type="text" name="subjectA" required ></p>
 	<p><label>Group B(associated with negative fold change):</label><br>
-	<input type="text" name="subjectB" required placeholder="subjectTwo"></p>
+	<input type="text" name="subjectB" required ></p>
 	<!-- <br><br> -->
 	<p><label>Neutral Color</label> <!-- wherever fold change is less that 4 -->
-	<input type="color" name="nColor" placeholder="colorN"></p>
+	<input type="color" name="nColor" ></p>
 	<!-- <br><br> -->
 	<p><label>Color for Group A</label>
-	<input type="color" name="aColor" placeholder="colorA"></p>
+	<input type="color" name="aColor" ></p>
 	<!-- <br> -->
 	<p><label>Color for Group B</label>
-	<input type="color" name="bColor" placeholder="colorB"></p>
+	<input type="color" name="bColor" ></p>
 	<!-- <br><br> -->
 	<!-- RADIO BUTTON GROUP-ADD -->
 	<p>
 	<radiogroup>
 	<label>Please select the type of figure</label>
 	<br>
-	<!-- 
-<radio id="simple" label="Simple Circle Packing"/>
-	<radio id="zoomable" label="Zoomable Circle Packing" selected="true"/>
- -->
+
 	<input type="radio" name="imageType" value="simple" >Circle Packing<br>
 	<input type="radio" name="imageType" value="zoomable" >Zoomable Circle Packing
 
 	</radiogroup>
 	</p>
-<!-- 
-	</form>
-	
-	<form name="uploadForm" method="POST">
- -->
+
  	<br><br>
 	<p> <label>Upload Required File (json format)</label></p>
 	<p>
