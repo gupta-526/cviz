@@ -65,6 +65,7 @@
 <h2 style='text-align: center;'>{{title}}</h2>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
+<svg>
 <script>
 
 var margin = 10,
@@ -161,7 +162,9 @@ d3.json("{{reqFile}}", function(error, root) {
 });
 
 d3.select(self.frameElement).style("height", outerDiameter + "px");
-
+</script>
+</svg>
+<script>
 //trying to add downloading as svg capabilities
 d3.select("#download")
     .on("mouseover", writeDownloadLink);
