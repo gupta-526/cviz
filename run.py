@@ -59,7 +59,7 @@ with app.app_context():
             return render_template("simple.html",title=request.form['title'],
                                    subA=request.form['subjectA'],
                                    subB=request.form['subjectB'],
-                                   neutralColor=request.form['nColor'],
+                                   nColor=request.form['nColor'],
                                    fillColor=request.form['fColor'],
                                    colorA=request.form['aColor'],
                                    colorB=request.form['bColor'],
