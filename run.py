@@ -60,6 +60,7 @@ with app.app_context():
                                    subA=request.form['subjectA'],
                                    subB=request.form['subjectB'],
                                    neutralColor=request.form['nColor'],
+                                   fillColor=request.form['fColor'],
                                    colorA=request.form['aColor'],
                                    colorB=request.form['bColor'],
                                    reqFile=upload())
@@ -69,6 +70,7 @@ with app.app_context():
                                        subA=request.form['subjectA'],
                                        subB=request.form['subjectB'],
                                        neutralColor=request.form['nColor'],
+                                       fillColor=request.form['fColor'],
                                        colorA=request.form['aColor'],
                                        colorB=request.form['bColor'],
                                        reqFile=upload())
