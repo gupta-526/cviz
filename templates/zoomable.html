@@ -169,7 +169,7 @@ d3.select("#download")
     .on("mouseover", writeDownloadLink);
 
 function writeDownloadLink(){
-    var html = d3.select("svg")
+    var html = d3.select("g")
         .attr("title", "svg_title")
         .attr("version", 1.1)
         .attr("xmlns", "http://www.w3.org/2000/svg")
