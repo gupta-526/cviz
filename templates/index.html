@@ -6,24 +6,40 @@ The extend statement tells this file inherit the general html elements from the 
 	<title> Data Visualization </title>
 	<head></head>
    <form action="getModelType" id="userInput" method="POST" enctype="multipart/form-data">
-	<p><label>Title:</label><br>
-	<input type="text"	name="title" required > </p>
-	<!-- <br><br> -->
-	<p><label>Group A (associated with positive fold change):</label><br>
-	<input type="text" name="subjectA" required ></p>
-	<p><label>Group B(associated with negative fold change):</label><br>
-	<input type="text" name="subjectB" required ></p>
-	<!-- <br><br> -->
-	<p><label>Neutral Color</label> <!-- wherever fold change is less that 4 -->
-	<input type="color" name="nColor" ></p>
-	<!-- <br><br> -->
-	<p><label>Circle Color</label> <!-- color for the larger circles -->
-	<input type="color" name="fColor" ></p>
-	<p><label>Color for Group A</label>
-	<input type="color" name="aColor" ></p>
-	<!-- <br> -->
-	<p><label>Color for Group B</label>
-	<input type="color" name="bColor" ></p>
+	<p>
+	<label>Title:</label><br>
+	<input type="text"	name="title" required > 
+	</p>
+	
+	<p>
+	<label>Group A (associated with positive fold change):</label><br>
+	<input type="text" name="subjectA" required >
+	</p>
+	
+	<p>
+	<label>Group B(associated with negative fold change):</label><br>
+	<input type="text" name="subjectB" required >
+	</p>
+	
+	<p>
+	<label>Neutral Color</label> <!-- wherever fold change is less that 4 -->
+	<input type="color" name="nColor" >
+	</p>
+	
+	<p>
+	<label>Circle Color</label> <!-- color for the larger circles -->
+	<input type="color" name="fColor" >
+	</p>
+	
+	<p>
+	<label>Color for Group A</label>
+	<input type="color" name="aColor" >
+	</p>
+	
+	<p>
+	<label>Color for Group B</label>
+	<input type="color" name="bColor" >
+	</p>
 	<!-- <br><br> -->
 	<!-- RADIO BUTTON GROUP-ADD -->
 	<p>
@@ -37,9 +53,8 @@ The extend statement tells this file inherit the general html elements from the 
 	</radiogroup>
 	</p>
 
- 	<br><br>
-	<p> <label>Upload Required File (json format)</label></p>
-	<p>
+	<p> 
+	<label>Upload Required File (json format)</label>
 	<input type="file"   name="myFiles"  > 
 	
 	</p>
