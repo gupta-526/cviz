@@ -54,18 +54,17 @@
 }
 /* /Download button */
 #download{
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
-
-
 </style>
 <body>
 <h2 style='text-align: center;'>{{title}}</h2>
 
+<a href="#" id="download">Download</a>
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<svg>
+
 <script>
 
 var margin = 10,
@@ -162,15 +161,15 @@ d3.json("{{reqFile}}", function(error, root) {
 });
 
 d3.select(self.frameElement).style("height", outerDiameter + "px");
-</script>
-</svg>
-<script>
+
+
+
 //trying to add downloading as svg capabilities
 d3.select("#download")
     .on("mouseover", writeDownloadLink);
 
 function writeDownloadLink(){
-    var html = d3.select("svg")
+    var html = d3.select("body").append("svg")
         .attr("title", "svg_title")
         .attr("version", 1.1)
         .attr("xmlns", "http://www.w3.org/2000/svg")
@@ -193,5 +192,5 @@ function writeDownloadLink(){
 };
 
 </script>
-<a href="#" id="download">Download</a>
+
 {% endblock %}
