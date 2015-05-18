@@ -122,7 +122,6 @@ d3.json("{{reqFile}}", function(error, root) {
                      })
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
       .attr("r", function(d) { return d.r; })
-      .style("fill", function(d) { return d.children ? color(d.depth) : null; })
       .on("click", function(d) { return zoom(focus == d ? root : d); });
 
   svg.append("g").selectAll("text")
