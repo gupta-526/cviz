@@ -24,7 +24,7 @@
   stroke: #777;
   stroke-width: 2px;
   fill: {{fillColor}};
-  fill-opacity:.25;
+  fill-opacity:{{opacityRoot}};
 }
 
 .node--leaf-neutral {
@@ -170,7 +170,7 @@ d3.select("#download")
     .on("mouseover", writeDownloadLink);
 
 function writeDownloadLink(){
-    var html = d3.select("g")
+    var html = d3.select("svg")
         .attr("title", "svg_title")
         .attr("version", 1.1)
         .attr("xmlns", "http://www.w3.org/2000/svg")

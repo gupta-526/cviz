@@ -53,6 +53,7 @@ with app.app_context():
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
         imageType=request.form['imageType']
+        
         # filename=upload()
         if(imageType=='simple'):
    
@@ -63,6 +64,8 @@ with app.app_context():
                                    fillColor=request.form['fColor'],
                                    colorA=request.form['aColor'],
                                    colorB=request.form['bColor'],
+                                   opacityRoot=request.form['opacity'],
+                                   fontType=request.form['fontList'],
                                    reqFile=upload())
         elif(imageType=='zoomable'):
 
@@ -73,6 +76,8 @@ with app.app_context():
                                        fillColor=request.form['fColor'],
                                        colorA=request.form['aColor'],
                                        colorB=request.form['bColor'],
+                                       opacityRoot=request.form['opacity'],
+                                       fontType=request.form['fontList'],
                                        reqFile=upload())
 
 

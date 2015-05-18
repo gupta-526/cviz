@@ -5,6 +5,20 @@ The extend statement tells this file inherit the general html elements from the 
 {% block content %}  
 	<title> Data Visualization </title>
 	<head></head>
+	<style>
+	.times{
+		font-family: "Times New Roman", Times, serif;
+	}
+	.georgia{
+		font-family: Georgia, serif;
+	}
+	.arial{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	.tahoma{
+		font-family:Tahoma,Geneva,sans-serif;
+	}
+	</style>
    <form action="getModelType" id="userInput" method="POST" enctype="multipart/form-data">
 	<p>
 	<label>Title:</label><br>
@@ -40,6 +54,11 @@ The extend statement tells this file inherit the general html elements from the 
 	<label>Color for Group B</label>
 	<input type="color" name="bColor" >
 	</p>
+	
+	<p>
+	<label>Opacity of the root node<em>(Recommended Range:(0.0-1])</em></label>
+	<input type="number" name="opacity" vale=.5>
+	</p>
 	<!-- <br><br> -->
 	<!-- RADIO BUTTON GROUP-ADD -->
 	<p>
@@ -52,7 +71,24 @@ The extend statement tells this file inherit the general html elements from the 
 
 	</radiogroup>
 	</p>
-
+	<p> 
+	<lable>Please select a font:</label>
+	<select name="fontList">
+	<option class="times" value="times"> 
+	Times New Roman
+	</option>
+	<option class="georgia" value="georgia"> 
+	Georgia
+	</option>
+	<option class="arial" value="arialHelvetica"> 
+	Arial, Helvetica
+	</option>
+	<option class="tahoma" value="tahoma"> 
+	Tahoma
+	</option>
+	</select>
+	</p>
+	
 	<p> 
 	<label>Upload Required File (json format)</label>
 	<input type="file"   name="myFiles"  > 
