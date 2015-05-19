@@ -57,7 +57,7 @@ The extend statement tells this file inherit the general html elements from the 
 	
 	<p>
 	<label>Opacity of the root node<em>(Recommended Range:(0.0-1])</em></label>
-	<input type="text" name="opacity" vale=.5>
+	<input type="number" name="opacity" defaultValue=.5 step="any" min=0>
 	</p>
 	<!-- <br><br> -->
 	<!-- RADIO BUTTON GROUP-ADD -->
@@ -71,6 +71,9 @@ The extend statement tells this file inherit the general html elements from the 
 
 	</radiogroup>
 	</p>
+	<p>
+	<label> Enter a name for the url</label>
+	<input type="text" name="urlName">
 	<p> 
 	<lable>Please select a font:</label>
 	<select name="fontList">
@@ -91,7 +94,7 @@ The extend statement tells this file inherit the general html elements from the 
 	
 	<p> 
 	<label>Upload Required File (json format)</label>
-	<input type="file"   name="myFiles"  required> 
+	<input type="file"   name="myFiles"  required accept=".json"> 
 	
 	</p>
 	<!--	BUttons of the input -->

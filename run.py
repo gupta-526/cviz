@@ -50,7 +50,7 @@ with app.app_context():
           path=os.path.join('/uploads', filename)
       return  path
     
-    @app.route('/getModelType', methods=['GET','POST'])  
+    @app.route('/getModelType/request.form['urlName']', methods=['GET','POST'])  
     def getModelType():
         imageType=request.form['imageType']
         
