@@ -48,15 +48,16 @@ with app.app_context():
           filename=secure_filename(file.filename)
           file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
           path=os.path.join('/uploads', filename)
-      return  path
+      return  filename
     
-    @app.route('/getModelType/request.form['urlName']', methods=['GET','POST'])  
+    @app.route('/getModelType/<urlAlias>', methods=['GET','POST'])  
     def getModelType():
         imageType=request.form['imageType']
         
         # filename=upload()
         if(imageType=='simple'):
-   
+            fileAlias=upload()
+            urlAlias=request.form['urlName']
             return render_template("simple.html",title=request.form['title'],
                                    subA=request.form['subjectA'],
                                    subB=request.form['subjectB'],
@@ -66,9 +67,10 @@ with app.app_context():
                                    colorB=request.form['bColor'],
                                    opacityRoot=request.form['opacity'],
                                    fontType=request.form['fontList'],
-                                   reqFile=upload())
+                                   reqFile=os.path.join('/uploads', fileAlias))
         elif(imageType=='zoomable'):
-
+            fileAlias=upload()
+            urlAlias=request.form['urlName']
             return render_template("zoomable.html",title=request.form['title'],
                                        subA=request.form['subjectA'],
                                        subB=request.form['subjectB'],
@@ -78,7 +80,7 @@ with app.app_context():
                                        colorB=request.form['bColor'],
                                        opacityRoot=request.form['opacity'],
                                        fontType=request.form['fontList'],
-                                       reqFile=upload())
+                                       reqFile=os.path.join('/uploads', fileAlias))
 
 
         
