@@ -50,7 +50,7 @@ with app.app_context():
           path=os.path.join('/uploads', filename)
       return  filename
     
-    @app.route('/getModelType/<urlAlias>', methods=['GET','POST'])  
+    @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
         imageType=request.form['imageType']
         
@@ -82,9 +82,6 @@ with app.app_context():
                                        fontType=request.form['fontList'],
                                        reqFile=os.path.join('/uploads', fileAlias))
 
-
-        
-        
 
     # @app.route('/zoomable', methods=["GET","POST"])
 #     def zoomable():
