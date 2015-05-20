@@ -72,7 +72,7 @@ with app.app_context():
                                    colorB=request.form['bColor'],
                                    opacityRoot=request.form['opacity'],
                                    fontType=request.form['fontList'],
-                                   fSize=request.form['fsize']
+                                   fSize=request.form['fsize'],
                                    reqFile='/uploads/filename')
         elif(imageType=='zoomable'):
             fileAlias=upload()
