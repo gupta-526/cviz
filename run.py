@@ -55,7 +55,7 @@ with app.app_context():
     def getModelType():
         
         imageType = request.form['imageType']
-        process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], upload()),'temp.json')
+        process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], upload(),app.config['UPLOAD_FOLDER'])
         filename = secure_filename('uploads/temp.json'.filename)
         # filename=upload()
         param_list = {title: request.form['title'],
