@@ -104,7 +104,7 @@ with app.app_context():
     def getModelType():
         
         imageType=request.form['imageType']
-        fileAfterConversion=process_fc_data(upload(),'temp.json',delim='\t')
+        fileAfterConversion=process_fc_data(upload(),'temp.json',delim='')
         filename=secure_filename(fileAfterConversion.filename)
         fileAfterConversion.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # filename=upload()
