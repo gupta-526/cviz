@@ -1,8 +1,8 @@
 def mtable_to_json(mg_abundance):
-    """
-    Convert a list of functional abundance data (level1,level2,level3,level4,abundance) into 
-    a hierarchical JSON file: {name: ..., children: [name:..., size:...]}
-    """
+#     """
+#     Convert a list of functional abundance data (level1,level2,level3,level4,abundance) into 
+#     a hierarchical JSON file: {name: ..., children: [name:..., size:...]}
+#     """
     hierarchy = {'name': 'metagenome', 'children':[]}
     for entry in mg_abundance:
         L1_idx = -1
@@ -41,10 +41,10 @@ def mtable_to_json(mg_abundance):
 
 
 
-def process_fc_data(fc_lvl_fp, json_out_fp, delim='\t')
-    """
-    Takes a tab-delimited spreadsheet file as input with the f
-    """
+def process_fc_data(fc_lvl_fp, json_out_fp, delim='\t'):
+#     """
+#     Takes a tab-delimited spreadsheet file as input with the f
+#     """
     with open(fc_lvl_fp, 'rU') as in_f:
         fc_lvl_data = [line for line in csv.reader(in_f, delimiter=delim)][1:]
 
