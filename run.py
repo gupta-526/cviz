@@ -55,10 +55,10 @@ with app.app_context():
     def getModelType():
         
         imageType = request.form['imageType']
-        process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], '.uploads/temp.json')
+        process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], upload()),'.uploads/temp.json')
         #filename = secure_filename(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # filename=upload()
-        param_list = {title: request.form['title'],
+        param_list = { title: request.form['title'],
                        subA:request.form['subjectA'],
                        subB:request.form['subjectB'],
                        nColor:request.form['nColor'],
@@ -68,7 +68,7 @@ with app.app_context():
                        opacityRoot:request.form['opacity'],
                        fontType:request.form['fontList'],
                        fSize:request.form['fsize'],
-                       reqFile:'.uploads/temp.json'}
+                       reqFile:'.uploads/temp.json' }
                        
         if(imageType=='simple'):
             
