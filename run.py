@@ -56,7 +56,7 @@ with app.app_context():
         
         imageType = request.form['imageType']
         process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], upload()),
-                        os.path.join(app.config['UPLOAD_FOLDER'], temp.json))
+                        os.path.join(app.config['UPLOAD_FOLDER'], 'temp.json'))
         #filename = secure_filename(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # filename=upload()
         param_list = { title: request.form['title'],
