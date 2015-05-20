@@ -59,17 +59,17 @@ with app.app_context():
                         os.path.join(app.config['UPLOAD_FOLDER'], 'temp.json'))
         #filename = secure_filename(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # filename=upload()
-        param_list = { title: request.form['title'],
-                       subA:request.form['subjectA'],
-                       subB:request.form['subjectB'],
-                       nColor:request.form['nColor'],
-                       fillColor:request.form['fColor'],
-                       colorA:request.form['aColor'],
-                       colorB:request.form['bColor'],
-                       opacityRoot:request.form['opacity'],
-                       fontType:request.form['fontList'],
-                       fSize:request.form['fsize'],
-                       reqFile:'.uploads/temp.json' }
+        param_list = {'title': request.form['title'],
+                       'subA':request.form['subjectA'],
+                       'subB':request.form['subjectB'],
+                       'nColor':request.form['nColor'],
+                       'fillColor':request.form['fColor'],
+                       'colorA':request.form['aColor'],
+                       'colorB':request.form['bColor'],
+                       'opacityRoot':request.form['opacity'],
+                       'fontType':request.form['fontList'],
+                       'fSize':request.form['fsize'],
+                       'reqFile':'.uploads/temp.json' }
                        
         if(imageType=='simple'):
             
