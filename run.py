@@ -48,7 +48,7 @@ with app.app_context():
           filename=secure_filename(file.filename)
           file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
           path=os.path.join('/uploads', filename)
-      return  path
+      return  filename
     
     #method to render template using various variables from form and the filename+path
     @app.route('/getModelType', methods=['GET','POST'])  
@@ -72,6 +72,7 @@ with app.app_context():
                                    colorB=request.form['bColor'],
                                    opacityRoot=request.form['opacity'],
                                    fontType=request.form['fontList'],
+                                   fSize=request.form['fsize']
                                    reqFile='/uploads/filename')
         elif(imageType=='zoomable'):
             fileAlias=upload()
@@ -85,6 +86,7 @@ with app.app_context():
                                        colorB=request.form['bColor'],
                                        opacityRoot=request.form['opacity'],
                                        fontType=request.form['fontList'],
+                                       fSize=request.form['fsize'],
                                        reqFile=upload())
 
 
