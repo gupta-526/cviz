@@ -54,40 +54,28 @@ with app.app_context():
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
         
-        imageType=request.form['imageType']
-        fileAfterConversion=process_fc_data(upload(),'temp.json')
-        filename=secure_filename(fileAfterConversion.filename)
-        fileAfterConversion.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        imageType = request.form['imageType']
+        process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], upload()),'temp.json')
+        filename = secure_filename('uploads/temp.json'.filename)
         # filename=upload()
-        
+        param_list = {title: request.form['title'],
+                       subA:request.form['subjectA'],
+                       subB:request.form['subjectB'],
+                       nColor:request.form['nColor'],
+                       fillColor:request.form['fColor'],
+                       colorA:request.form['aColor'],
+                       colorB:request.form['bColor'],
+                       opacityRoot:request.form['opacity'],
+                       fontType:request.form['fontList'],
+                       fSize:request.form['fsize'],
+                       reqFile:'uploads/'+filename}
+                       
         if(imageType=='simple'):
-            fileAlias=upload()
-            urlAlias=request.form['urlName']
-            return render_template("simple.html",title=request.form['title'],
-                                   subA=request.form['subjectA'],
-                                   subB=request.form['subjectB'],
-                                   nColor=request.form['nColor'],
-                                   fillColor=request.form['fColor'],
-                                   colorA=request.form['aColor'],
-                                   colorB=request.form['bColor'],
-                                   opacityRoot=request.form['opacity'],
-                                   fontType=request.form['fontList'],
-                                   fSize=request.form['fsize'],
-                                   reqFile='/uploads/filename')
+            
+            return render_template("simple.html", **param_list)
         elif(imageType=='zoomable'):
-            fileAlias=upload()
-            urlAlias=request.form['urlName']
-            return render_template("zoomable.html",title=request.form['title'],
-                                       subA=request.form['subjectA'],
-                                       subB=request.form['subjectB'],
-                                       nColor=request.form['nColor'],
-                                       fillColor=request.form['fColor'],
-                                       colorA=request.form['aColor'],
-                                       colorB=request.form['bColor'],
-                                       opacityRoot=request.form['opacity'],
-                                       fontType=request.form['fontList'],
-                                       fSize=request.form['fsize'],
-                                       reqFile=upload())
+          
+            return render_template("zoomable.html", **param_list)
 
 
 if __name__ == '__main__':
