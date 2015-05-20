@@ -90,9 +90,6 @@ with app.app_context():
 
 
     def process_fc_data(fc_lvl_fp, json_out_fp, delim='\t')
-    # """
-#     Takes a tab-delimited spreadsheet file as input with the f
-#     """
     with open(fc_lvl_fp, 'rU') as in_f:
         fc_lvl_data = [line for line in csv.reader(in_f, delimiter=delim)][1:]
 
@@ -104,7 +101,7 @@ with app.app_context():
     def getModelType():
         
         imageType=request.form['imageType']
-        fileAfterConversion=process_fc_data(upload(),'temp.json',delim)
+        fileAfterConversion=process_fc_data(upload(),'temp.json')
         filename=secure_filename(fileAfterConversion.filename)
         fileAfterConversion.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # filename=upload()
