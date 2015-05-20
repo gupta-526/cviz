@@ -69,7 +69,7 @@ with app.app_context():
                        'opacityRoot':request.form['opacity'],
                        'fontType':request.form['fontList'],
                        'fSize':request.form['fsize'],
-                       'reqFile':'.uploads/temp.json' }
+                       'reqFile':os.path.join('/uploads', 'temp.json')}
                        
         if(imageType=='simple'):
             
