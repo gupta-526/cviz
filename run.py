@@ -20,7 +20,7 @@ with app.app_context():
     app.config['SECRET_KEY']=os.environ.get('SECRET_KEY','harryPotterAndTheGobletOfFire')
     app.config['UPLOAD_FOLDER'] = os.path.join(os.environ['OPENSHIFT_DATA_DIR'],'uploads/')
     #app.config['UPLOAD_FOLDER'] ='Users/purnimakumar/Documents/VisualModelApp/uploads/'
-    app.config['ALLOWED_EXTENSIONS']=set(['json'])
+    app.config['ALLOWED_EXTENSIONS']=set(['json','txt'])
     app.add_url_rule('/getModel', 'simple',build_only=True)
     app.add_url_rule('/getModel', 'zoomable',build_only=True)
     app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
@@ -48,13 +48,72 @@ with app.app_context():
           filename=secure_filename(file.filename)
           file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
           path=os.path.join('/uploads', filename)
-      return  filename
+      return  path
     
+    
+    
+    def mtable_to_json(mg_abundance):
+#     """
+#     Convert a list of functional abundance data (level1,level2,level3,level4,abundance) into 
+#     a hierarchical JSON file: {name: ..., children: [name:..., size:...]}
+#     """
+    hierarchy = {'name': 'metagenome', 'children':[]}
+    for entry in mg_abundance:
+        L1_idx = -1
+        lvl1, lvl2, lvl3, lvl4, count = entry[0], entry[1], entry[2], entry[3], float(entry[4])
+        for i, c in enumerate(hierarchy['children']):
+            if c['name'] == lvl1:
+                L1_idx = i
+                break
+        else:
+            hierarchy['children'].append({'name':lvl1, 
+                                          'children':[{'name':lvl2, 
+                                                       'children':[{'name':lvl3, 
+                                                                    'children':[{'name':lvl4, 'size':count}]}]}]})
+            continue
+        if L1_idx > -1:
+            L2_idx = -1
+            for j, c in enumerate(hierarchy['children'][L1_idx]['children']):
+                if c['name'] == lvl2:
+                    L2_idx = j
+                    break
+            else:
+                hierarchy['children'][L1_idx]['children'].append({'name': lvl2, 
+                                                                  'children':[{'name':lvl3, 
+                                                                               'children':[{'name':lvl4, 'size':count}]}]})
+                continue
+        if L2_idx > -1:
+            for c in hierarchy['children'][L1_idx]['children'][L2_idx]['children']:
+                if c['name'] == lvl3:
+                    c['children'].append({'name':lvl4, 'size':count})
+                    break
+            else:
+                hierarchy['children'][L1_idx]['children'][L2_idx]['children'].append({'name': lvl3, 
+                                                                                      'children':[{'name':lvl4, 'size':count}]})
+        
+    return hierarchy
+
+    
+    def process_fc_data(fc_lvl_fp, json_out_fp, delim='\t')
+    # """
+#     Takes a tab-delimited spreadsheet file as input with the f
+#     """
+    with open(fc_lvl_fp, 'rU') as in_f:
+        fc_lvl_data = [line for line in csv.reader(in_f, delimiter=delim)][1:]
+
+    with open(json_out_fp, 'w') as out_f:
+        json.dump(mtable_to_json(fc_lvl_data), out_f)
+        
+    #method to render template using various variables from form and the filename+path
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
-        imageType=request.form['imageType']
         
+        imageType=request.form['imageType']
+        fileAfterConversion=process_fc_data(upload(),'temp.json',delim='\t')
+        filename=secure_filename(fileAfterConversion.filename)
+        fileAfterConversion.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # filename=upload()
+        
         if(imageType=='simple'):
             fileAlias=upload()
             urlAlias=request.form['urlName']
@@ -67,7 +126,7 @@ with app.app_context():
                                    colorB=request.form['bColor'],
                                    opacityRoot=request.form['opacity'],
                                    fontType=request.form['fontList'],
-                                   reqFile=os.path.join('/uploads', fileAlias))
+                                   reqFile='/uploads/filename')
         elif(imageType=='zoomable'):
             fileAlias=upload()
             urlAlias=request.form['urlName']
@@ -80,34 +139,8 @@ with app.app_context():
                                        colorB=request.form['bColor'],
                                        opacityRoot=request.form['opacity'],
                                        fontType=request.form['fontList'],
-                                       reqFile=os.path.join('/uploads', fileAlias))
+                                       reqFile=upload())
 
-
-    # @app.route('/zoomable', methods=["GET","POST"])
-#     def zoomable():
-#         title=request.form['title']
-#         subA=request.form['subjectA']
-#         subB=request.form['subjectB']
-#         neutralColor=request.form['nColor']
-#         colorA=request.form['aColor']
-#         colorB=request.form['bColor']
-#         reqFile=''
-#         return render_template("zoomable.html",title=title,subA=subA,
-#                                 neutralColor=neutralColor,colorA=colorA,colorB=colorB,
-#                                 reqFile=reqFile)
-# 
-#     @app.route('/simple', methods=["GET","POST"])
-#     def simple():
-#         title=request.form['title']
-#         subA=request.form['subjectA']
-#         subB=request.form['subjectB']
-#         neutralColor=request.form['nColor']
-#         colorA=request.form['aColor']
-#         colorB=request.form['bColor']
-#         reqFile=''    
-#         return render_template("simple.html",title=title,subA=subA,
-#                                 neutralColor=neutralColor,colorA=colorA,colorB=colorB,
-#                                 reqFile=reqFile)
 
 if __name__ == '__main__':
     app.debug = True
