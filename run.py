@@ -56,7 +56,7 @@ with app.app_context():
         
         imageType = request.form['imageType']
         process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], '.uploads/temp.json')
-        filename = secure_filename(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        #filename = secure_filename(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # filename=upload()
         param_list = {title: request.form['title'],
                        subA:request.form['subjectA'],
@@ -68,7 +68,7 @@ with app.app_context():
                        opacityRoot:request.form['opacity'],
                        fontType:request.form['fontList'],
                        fSize:request.form['fsize'],
-                       reqFile:'uploads/'+filename}
+                       reqFile:'.uploads/temp.json'}
                        
         if(imageType=='simple'):
             
