@@ -4,7 +4,9 @@ The extend statement tells this file inherit the general html elements from the 
 {% extends "base.html" %}  
 {% block content %}  
 	<title> Data Visualization </title>
-	<head></head>
+	<head>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	</head>
 	<style>
 	.times{
 		font-family: "Times New Roman", Times, serif;
@@ -33,6 +35,10 @@ The extend statement tells this file inherit the general html elements from the 
 	<p>
 	<label>Group B(associated with negative fold change):</label><br>
 	<input type="text" name="subjectB" required >
+	<div class="help-tip">
+    <p>This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+	</div>
+
 	</p>
 	
 	<p>
