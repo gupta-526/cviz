@@ -36,7 +36,7 @@ The extend statement tells this file inherit the general html elements from the 
 	<label>Group B(associated with negative fold change):</label><br>
 	<input type="text" name="subjectB" required >
 	<div class="help-tip">
-    <p>This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+    <span style="color:blue;" title="INSERT TEXTBOX TEXT HERE">associated with negative fold change</span>
 	</div>
 
 	</p>
@@ -80,6 +80,7 @@ The extend statement tells this file inherit the general html elements from the 
 	<p>
 	<label> Enter a name for the url</label>
 	<input type="text" name="urlName">
+	
 	<p> 
 	<lable>Please select a font:</label>
 	<select name="fontList">
@@ -102,8 +103,9 @@ The extend statement tells this file inherit the general html elements from the 
 	<label>Please enter a font size</label>
 	<input type="number" name="fsize" defaultValue=15 step="any" min=9>
 	</p>
+	
 	<p> 
-	<label>Upload Required File (tabbed text file)</label>
+	<label>Upload Required File (tab-separated text file)</label>
 	<input type="file"   name="myFiles"  required > 
 	
 	</p>
