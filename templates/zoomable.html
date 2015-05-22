@@ -89,9 +89,9 @@ var pack = d3.layout.pack()
     .size([innerDiameter, innerDiameter])
     .value(function(d) { 
                d.type = '{{subB}}';
-               if (Math.round(Math.abs(d.size)) <  2)
+               if (Math.round(Math.abs(d.size)) <  {{fc_limit}})
                    d.type = 'neutral';
-               else if (d.size < -1)
+               else if (d.size < -{{fc_limit}})
                    d.type = '{{subA}}';
                return Math.abs(d.size); 
            });    

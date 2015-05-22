@@ -43,9 +43,9 @@ var pack = d3.layout.pack()
     .size([diameter - 4, diameter - 4])
     .value(function(d) { 
                d.type = '{{subA}}';
-               if (Math.round(Math.abs(d.size)) <=  2)
+               if (Math.round(Math.abs(d.size)) <=  {{fc_limit}})
                    d.type = 'neutral';
-               else if (d.size < -2)
+               else if (d.size < -{{fc_limit}})
                    d.type = '{{subB}}';
                return Math.abs(d.size); 
            });

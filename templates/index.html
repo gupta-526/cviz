@@ -35,6 +35,11 @@ The extend statement tells this file inherit the general html elements from the 
 	<label>Group B:</label><br>
 	<input type="text" name="subjectB" required >
 	</p>
+		
+	<p tittle="Fold Change under which the functinality is considered neutral">
+	<label>Fold Change Threshold </label>
+	<input type="number" name="nLimit" min=0>
+	</p>
 	
 	<p title="Color of the circle whenever the fold change value is less than the threshold value">
 	<label>Neutral Color</label> <!-- wherever fold change is less that 4 -->
@@ -112,11 +117,5 @@ The extend statement tells this file inherit the general html elements from the 
 		
 	</form> 
  	
- 	<div>
- 	<p>
- 	Neutral Color: Color of the circle whenever the fold change is less than 4,
- 	Circle Color: Color for the root(larger) circle,
- 	</p>
- 	</div>
 
 {% endblock %}

@@ -68,6 +68,7 @@ with app.app_context():
         param_list = {'title': request.form['title'],
                        'subA':request.form['subjectA'],
                        'subB':request.form['subjectB'],
+                       'fc_limit':request.form['nLimit'],
                        'nColor':request.form['nColor'],
                        'fillColor':request.form['fColor'],
                        'colorA':request.form['aColor'],
