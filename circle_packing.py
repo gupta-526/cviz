@@ -106,7 +106,7 @@ def process_fc_data(fc_lvl_fp, json_out_fp, delim='\t'):
                   Defaults to the tab character ('\t')
     :rtype: None
     """
-    with open(fc_lvl_fp, 'r') as in_f:
+    with open(fc_lvl_fp, 'rU') as in_f:
     	reader = csv.reader(in_f, delimiter=delim)
     	levels = len(reader.next())-1
 #     	sys.stdout.write(str(levels))
