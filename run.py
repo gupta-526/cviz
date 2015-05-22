@@ -50,13 +50,16 @@ with app.app_context():
           path=os.path.join('/uploads', filename)
       return  filename
     
+    def random_sufix(length=6, chars=string.ascii_uppercase+string.digits):
+    	return ''.join([random.choice(chars) for _ in range(length)])
+    	
     #method to render template using various variables from form and the filename+path
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
         
         imageType = request.form['imageType']
         process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], upload()),
-                        os.path.join(app.config['UPLOAD_FOLDER'], 'temp.json'))
+                        os.path.join(app.config['UPLOAD_FOLDER'], random_suffix()+'.json'))
         #filename = secure_filename(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # filename=upload()
         param_list = {'title': request.form['title'],
@@ -69,11 +72,12 @@ with app.app_context():
                        'opacityRoot':request.form['opacity'],
                        'fontType':request.form['fontList'],
                        'fSize':request.form['fsize'],
-                       'reqFile':os.path.join('/uploads', 'temp.json')}
+                       'reqFile':os.path.join('/uploads', random_suffix()+'.json')}
                        
         if(imageType=='simple'):
             
             return render_template("simple.html", **param_list)
+            
         elif(imageType=='zoomable'):
           
             return render_template("zoomable.html", **param_list)
