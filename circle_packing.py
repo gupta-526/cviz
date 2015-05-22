@@ -105,13 +105,13 @@ def process_fc_data(fc_lvl_fp, json_out_fp, delim='\t', levels=4):
                   Defaults to the tab character ('\t')
     :rtype: None
     """
-    if levels not in range(2,5):
-        raise ValueError("{} invalid value for 'levels' parameter. Valid values: 2, 3, 4")
-    lvl_switch = {4: mtable_to_json, 3: mtable_to_json_3lvls, 2: mtable_to_json_2lvls}
-
     with open(fc_lvl_fp, 'rU') as in_f:
-        fc_lvl_data = [line for line in csv.reader(in_f, delimiter=delim)][1:]
-
+    	reader = csv.reader(in_f, delimiter=delim)
+    	levels = len(reader.next())-1
+        fc_lvl_data = [line for line in reader]
+    
+    lvl_switch = {4: mtable_to_json, 3: mtable_to_json_3lvls, 2: mtable_to_json_2lvls}
+	
     with open(json_out_fp, 'w') as out_f:
         json.dump(lvl_switch[levels](fc_lvl_data), out_f)
 
