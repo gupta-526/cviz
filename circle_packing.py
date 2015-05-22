@@ -91,7 +91,7 @@ def mtable_to_json_2lvls(mg_abundance):
     return hierarchy
 
 
-def process_fc_data(fc_lvl_fp, json_out_fp, delim='\t', levels=4):
+def process_fc_data(fc_lvl_fp, json_out_fp, delim='\t'):
     """
     Takes as input a spreadsheet file containing hierarchical pathway/functional
     data and associated fold-changes (pos/neg indicating group A vs group B) and
