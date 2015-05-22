@@ -106,10 +106,10 @@ def process_fc_data(fc_lvl_fp, json_out_fp, delim='\t'):
                   Defaults to the tab character ('\t')
     :rtype: None
     """
-    with open(fc_lvl_fp, 'rU') as in_f:
+    with open(fc_lvl_fp, 'r') as in_f:
     	reader = csv.reader(in_f, delimiter=delim)
     	levels = len(reader.next())-1
-    	sys.stdout.write(str(levels))
+#     	sys.stdout.write(str(levels))
         fc_lvl_data = [line for line in reader]
     
     lvl_switch = {4: mtable_to_json, 3: mtable_to_json_3lvls, 2: mtable_to_json_2lvls}

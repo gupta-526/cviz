@@ -30,25 +30,25 @@ The extend statement tells this file inherit the general html elements from the 
 	<p>
 	<label>Group A (associated with positive fold change):</label><br>
 	<input type="text" name="subjectA" required >
+	<img src="question-mark.png" title="group that is associated with a positive fold change">
 	</p>
 	
 	<p>
 	<label>Group B(associated with negative fold change):</label><br>
 	<input type="text" name="subjectB" required >
-	<div class="help-tip">
-    <span style="color:blue;" title="INSERT TEXTBOX TEXT HERE">associated with negative fold change</span>
-	</div>
-
+	<img src="question-mark.png" title="group that is associated with a negative fold change">
 	</p>
 	
 	<p>
 	<label>Neutral Color</label> <!-- wherever fold change is less that 4 -->
 	<input type="color" name="nColor" >
+	<img src="question-mark.png" title="Color of the circle whenever the fold change value is less than the threshold value">
 	</p>
 	
 	<p>
 	<label>Circle Color</label> <!-- color for the larger circles -->
 	<input type="color" name="fColor" >
+	<img src="question-mark.png" title="Color of the root circle">
 	</p>
 	
 	<p>
@@ -62,14 +62,14 @@ The extend statement tells this file inherit the general html elements from the 
 	</p>
 	
 	<p>
-	<label>Opacity of the root node<em>(Recommended Range:(0.0-1])</em></label>
+	<label>Opacity of the root circle<em>(Recommended Range:(0.0-1])</em></label>
 	<input type="number" name="opacity" defaultValue=.5 step="any" min=0 max=1>
 	</p>
 	<!-- <br><br> -->
 	<!-- RADIO BUTTON GROUP-ADD -->
 	<p>
 	<radiogroup>
-	<label>Please select the type of figure</label>
+	<label>Please select the type of figure </label>
 	<br>
 
 	<input type="radio" name="imageType" value="simple" >Circle Packing<br>
@@ -105,11 +105,13 @@ The extend statement tells this file inherit the general html elements from the 
 	</p>
 	
 	<p> 
-	<label>Upload Required File (tab-separated text file)</label>
+	<label>Upload Required File (tab-separated text file)
+	<img src="question-mark.png" title="File should be a tab seperated txt file with number of levels and the fold change numbers ONLY"></label>
+	<br>
 	<input type="file"   name="myFiles"  required > 
 	
 	</p>
-	<!--	BUttons of the input -->
+	<!--	Buttons of the input -->
 
 	<input type="submit" value="Submit">
 	<input type="reset" value="Reset">
