@@ -26,28 +26,24 @@ The extend statement tells this file inherit the general html elements from the 
 	<input type="text"	name="title" required > 
 	</p>
 	
-	<p>
+	<p title="group that is associated with a positive fold change">
 	<label>Group A :</label><br>
 	<input type="text" name="subjectA" required >
-	<img src="/templates/question-mark.png" title="group that is associated with a positive fold change">
 	</p>
 	
-	<p>
+	<p title="group that is associated with a negative fold change"> 
 	<label>Group B:</label><br>
 	<input type="text" name="subjectB" required >
-	<img src="/templates/question-mark.png" title="group that is associated with a negative fold change">
 	</p>
 	
-	<p>
+	<p title="Color of the circle whenever the fold change value is less than the threshold value">
 	<label>Neutral Color</label> <!-- wherever fold change is less that 4 -->
 	<input type="color" name="nColor" >
-	<img src="/templates/question-mark.png" title="Color of the circle whenever the fold change value is less than the threshold value">
 	</p>
 	
-	<p>
+	<p title="Color of the root circle">
 	<label>Circle Color</label> <!-- color for the larger circles -->
 	<input type="color" name="fColor" >
-	<img src="/templates/question-mark.png" title="Color of the root circle">
 	</p>
 	
 	<p>
@@ -103,9 +99,8 @@ The extend statement tells this file inherit the general html elements from the 
 	<input type="number" name="fsize" defaultValue=15 step="any" min=9>
 	</p>
 	
-	<p> 
-	<label>Upload Required File (tab-separated text file)
-	<img src="/templates/question-mark.png" title="File should be a tab seperated txt file with number of levels and the fold change numbers ONLY"></label>
+	<p title="File should be a tab seperated txt file with number of levels and the fold change numbers ONLY"> 
+	<label>Upload Required File (tab-separated text file) </label>
 	<br>
 	<input type="file"   name="myFiles"  required > 
 	
