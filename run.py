@@ -52,7 +52,7 @@ with app.app_context():
           path=os.path.join('/uploads', filename)
       return  filename
     
-    @app.route('/random_suffix',methods=['GET','POST'])
+    @app.route('/random_sufix',methods=['GET','POST'])
     def random_sufix(length=6, chars=string.ascii_uppercase+string.digits):
     	return ''.join([random.choice(chars) for _ in range(length)])
     	
@@ -62,7 +62,7 @@ with app.app_context():
         
         imageType = request.form['imageType']
         process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], upload()),
-                        os.path.join(app.config['UPLOAD_FOLDER'], random_suffix()+'.json'))
+                        os.path.join(app.config['UPLOAD_FOLDER'], random_sufix()+'.json'))
         #filename = secure_filename(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # filename=upload()
         param_list = {'title': request.form['title'],
@@ -75,7 +75,7 @@ with app.app_context():
                        'opacityRoot':request.form['opacity'],
                        'fontType':request.form['fontList'],
                        'fSize':request.form['fsize'],
-                       'reqFile':os.path.join('/uploads', random_suffix()+'.json')}
+                       'reqFile':os.path.join('/uploads', random_sufix()+'.json')}
                        
         if(imageType=='simple'):
             
