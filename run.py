@@ -59,10 +59,10 @@ with app.app_context():
     #method to render template using various variables from form and the filename+path
     @app.route('/getModelType', methods=['GET','POST'])  
     def getModelType():
-        
+        filename=random_sufix()+'.json'
         imageType = request.form['imageType']
         process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], upload()),
-                        os.path.join(app.config['UPLOAD_FOLDER'], random_sufix()+'.json'))
+                        os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #filename = secure_filename(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         # filename=upload()
         param_list = {'title': request.form['title'],
@@ -75,7 +75,7 @@ with app.app_context():
                        'opacityRoot':request.form['opacity'],
                        'fontType':request.form['fontList'],
                        'fSize':request.form['fsize'],
-                       'reqFile':os.path.join('/uploads', random_sufix()+'.json')}
+                       'reqFile':os.path.join('/uploads', filename)}
                        
         if(imageType=='simple'):
             
