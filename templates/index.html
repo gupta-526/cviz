@@ -5,7 +5,6 @@ The extend statement tells this file inherit the general html elements from the 
 {% block content %}  
 	<title> Data Visualization </title>
 	<head>
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
 	</head>
 	<style>
 	.times{
@@ -28,27 +27,27 @@ The extend statement tells this file inherit the general html elements from the 
 	</p>
 	
 	<p>
-	<label>Group A (associated with positive fold change):</label><br>
+	<label>Group A :</label><br>
 	<input type="text" name="subjectA" required >
-	<img src="question-mark.png" title="group that is associated with a positive fold change">
+	<img src="/templates/question-mark.png" title="group that is associated with a positive fold change">
 	</p>
 	
 	<p>
-	<label>Group B(associated with negative fold change):</label><br>
+	<label>Group B:</label><br>
 	<input type="text" name="subjectB" required >
-	<img src="question-mark.png" title="group that is associated with a negative fold change">
+	<img src="/templates/question-mark.png" title="group that is associated with a negative fold change">
 	</p>
 	
 	<p>
 	<label>Neutral Color</label> <!-- wherever fold change is less that 4 -->
 	<input type="color" name="nColor" >
-	<img src="question-mark.png" title="Color of the circle whenever the fold change value is less than the threshold value">
+	<img src="/templates/question-mark.png" title="Color of the circle whenever the fold change value is less than the threshold value">
 	</p>
 	
 	<p>
 	<label>Circle Color</label> <!-- color for the larger circles -->
 	<input type="color" name="fColor" >
-	<img src="question-mark.png" title="Color of the root circle">
+	<img src="/templates/question-mark.png" title="Color of the root circle">
 	</p>
 	
 	<p>
@@ -106,7 +105,7 @@ The extend statement tells this file inherit the general html elements from the 
 	
 	<p> 
 	<label>Upload Required File (tab-separated text file)
-	<img src="question-mark.png" title="File should be a tab seperated txt file with number of levels and the fold change numbers ONLY"></label>
+	<img src="/templates/question-mark.png" title="File should be a tab seperated txt file with number of levels and the fold change numbers ONLY"></label>
 	<br>
 	<input type="file"   name="myFiles"  required > 
 	
