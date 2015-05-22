@@ -52,6 +52,7 @@ with app.app_context():
           path=os.path.join('/uploads', filename)
       return  filename
     
+    @app.route('/random_suffix',methods=['GET','POST'])
     def random_sufix(length=6, chars=string.ascii_uppercase+string.digits):
     	return ''.join([random.choice(chars) for _ in range(length)])
     	
