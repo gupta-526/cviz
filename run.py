@@ -1,4 +1,6 @@
 import os
+import string
+import random
 from flask import Flask,session
 from flask import render_template
 from flask import request
