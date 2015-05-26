@@ -32,11 +32,14 @@ text {
 
 </style>
 <body>
-<div id="svg"></div>
-<button id="save">Save as Image</button>
-<div id="svgdataurl"></div>
-
 <h2 style='text-align: center;'>{{title}}</h2>
+
+	<div id="svg"></div>
+	<button id="save">Save as Image</button>
+	<div id="svgdataurl"></div>
+	<canvas width="960" height="500" style="display:none"></canvas>
+
+
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -89,13 +92,8 @@ d3.json("{{reqFile}}", function(error, root) {
       .text(function(d) { return d.name.substring(0, d.r / 3); });
       
 
-  
-});
-
-d3.select(self.frameElement).style("height", diameter + "px");
-
 d3.select("#save").on("click", function(){
-  var html = d3.select("svg")
+  var html = d3.select("g")
         .attr("version", 1.1)
         .attr("xmlns", "http://www.w3.org/2000/svg")
         .node().parentNode.innerHTML;
@@ -105,25 +103,32 @@ d3.select("#save").on("click", function(){
   var img = '<img src="'+imgsrc+'">'; 
   d3.select("#svgdataurl").html(img);
   
-   var canvas = document.querySelector("canvas"),
-	  context = canvas.getContext("2d");
- 
-  var image = new Image;
-  image.src = imgsrc;
-  image.onload = function() {
-	  context.drawImage(image, 0, 0);
- 
-	  var canvasdata = canvas.toDataURL("image/png");
- 
-	  var pngimg = '<img src="'+canvasdata+'">'; 
-  	  d3.select("#pngdataurl").html(pngimg);
- 
-	  var a = document.createElement("a");
-	  a.download = "sample.png";
-	  a.href = canvasdata;
-	  a.click();
-  };
+  //  var canvas = document.querySelector("canvas"),
+// 	  context = canvas.getContext("2d");
+//  
+//   var image = new Image;
+//   image.src = imgsrc;
+//   image.onload = function() {
+// 	  context.drawImage(image, 0, 0);
+//  
+// 	  var canvasdata = canvas.toDataURL("image/png");
+//  
+// 	  var pngimg = '<img src="'+canvasdata+'">'; 
+//   	  d3.select("#pngdataurl").html(pngimg);
+//  
+// 	  var a = document.createElement("a");
+// 	  a.download = "sample.png";
+// 	  a.href = canvasdata;
+// 	  a.click();
+//   };
 });
+
+  
+});
+
+d3.select(self.frameElement).style("height", diameter + "px");
+
+
 
 
 
