@@ -93,9 +93,10 @@ d3.json("{{reqFile}}", function(error, root) {
       
 
 d3.select("#save").on("click", function(){
-  var html = d3.select("g")
+  var html = d3.select("svg")
         .attr("version", 1.1)
         .attr("xmlns", "http://www.w3.org/2000/svg")
+        .append("g")
         .node().parentNode.innerHTML;
  
   //console.log(html);
