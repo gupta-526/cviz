@@ -32,14 +32,7 @@ text {
 
 </style>
 <body>
-<h2 style='text-align: center;'>{{title}}</h2>
-
-	<div id="svg"></div>
-	<button id="save">Save as Image</button>
-	<div id="svgdataurl"></div>
-	<canvas width="960" height="500" style="display:none"></canvas>
-
-
+    <h2 style='text-align: center;'>{{title}}</h2>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -57,7 +50,7 @@ var pack = d3.layout.pack()
                return Math.abs(d.size); 
            });
 
-var svg = d3.select("#svg").append("svg")
+var svg = d3.select("body").append("svg")
     .attr("width", diameter)
     .attr("height", diameter)
   .append("g")
@@ -90,18 +83,8 @@ d3.json("{{reqFile}}", function(error, root) {
       .attr("dy", ".3em")
       .style("text-anchor", "middle")
       .text(function(d) { return d.name.substring(0, d.r / 3); });
-      
-
-
-
-  
 });
 
- d3.select(self.frameElement).style("height", diameter + "px");
-
-});
-
-
-
+d3.select(self.frameElement).style("height", diameter + "px");
 
 </script>
