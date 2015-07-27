@@ -42,7 +42,7 @@ var diameter = 1200,//960,
 var pack = d3.layout.pack()
     .size([diameter - 4, diameter - 4])
     .value(function(d) { 
-               d.type = '{{subA}}';
+               d.type = '{{subB}}';
                if (Math.round(Math.abs(d.size)) <=  {{fc_limit}})
                    d.type = 'neutral';
                else if (d.size < -{{fc_limit}})
