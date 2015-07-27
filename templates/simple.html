@@ -27,7 +27,7 @@ circle {
 }
 
 text {
-  font: {{fSize}}px {{fontType}};
+  font: 0px {{fontType}};
 }
 
 </style>
@@ -84,7 +84,7 @@ d3.json("{{reqFile}}", function(error, root) {
       .style("text-anchor", "middle")
       .text(function(d) { 
       			if (d.r > 5)
-      				return d.name.substring(0, d.r/2); 
+      				return d.name.substring(0, d.r/3); 
       			return "";
       });
 });
