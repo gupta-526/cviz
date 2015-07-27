@@ -46,7 +46,7 @@ var pack = d3.layout.pack()
                if (Math.round(Math.abs(d.size)) <=  {{fc_limit}})
                    d.type = 'neutral';
                else if (d.size < -{{fc_limit}})
-                   d.type = '{{subB}}';
+                   d.type = '{{subA}}';
                return Math.abs(d.size); 
            });
 
