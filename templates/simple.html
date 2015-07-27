@@ -82,7 +82,11 @@ d3.json("{{reqFile}}", function(error, root) {
   node.filter(function(d) { return !d.children; }).append("text")
       .attr("dy", ".3em")
       .style("text-anchor", "middle")
-      .text(function(d) { return d.name.substring(0, d.r ); });
+      .text(function(d) { 
+      			if (d.r > 5)
+      				return d.name.substring(0, d.r/2); 
+      			return "";
+      });
 });
 
 d3.select(self.frameElement).style("height", diameter + "px");
