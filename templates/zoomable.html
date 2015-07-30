@@ -63,6 +63,14 @@
   padding: 4px; 
   margin:4px;
 }
+
+body{
+  padding-top: 60px;
+  padding-bottom: 42px;
+  padding-left: 50px;
+  padding-right: 50px;
+  
+}
 </style>
 <body>
 <h2 style='text-align: center;'>{{title}}</h2>
@@ -166,7 +174,7 @@ d3.json("{{reqFile}}", function(error, root) {
 
 d3.select(self.frameElement).style("height", outerDiameter + "px");
 
-
+//Download Function
 function download(){
   var e = document.createElement('script');
   if (window.location.protocol === 'https:'){
@@ -178,37 +186,7 @@ function download(){
   e.setAttribute('class', 'svg-crowbar');
   document.body.appendChild(e); 
 }
-//trying to add downloading as svg capabilities
-// d3.select("#download")
-//     .on("mouseover", writeDownloadLink);
 
-// function writeDownloadLink(){
-//     var html = d3.select("svg")
-//         .attr("title", "test2")
-//         .attr("version", 1.1)
-//         .attr("xmlns", "http://www.w3.org/2000/svg")
-//         .node().parentNode.innerHTML;
-
-//     d3.select("body").append("div")
-//         .attr("id", "download")
-//         .style("top", event.clientY+20+"px")
-//         .style("left", event.clientX+"px")
-//         .html("Right-click on this preview and choose Save as<br />Left-Click to dismiss<br />")
-//         .append("img")
-//         .attr("src", "data:image/svg+xml;base64,"+ btoa(html));
-
-//     d3.select("#download")
-//         .on("click", function(){
-//             if(event.button == 0){
-//                 d3.select(this).transition()
-//                     .style("opacity", 0)
-//                     .remove();
-//             }
-//         })
-//         .transition()
-//         .duration(500)
-//         .style("opacity", 1);
-// };
 
 </script>
 
