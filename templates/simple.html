@@ -1,14 +1,15 @@
+
 {% extends "base.html" %}
-{% block head %}
+{% block content %}
+<!DOCTYPE html>
+<meta charset="utf-8">
 <head><title>{{title}}</title></head>
-{%endblock %}
-{% block style %}
 <style>
 
 circle {
   fill: {{fillColor}};
   fill-opacity: {{opacityRoot}};
-  stroke: "#FFFFFF";
+  stroke: {{fillColor}};
   stroke-width: 1px;
 }
 
@@ -31,13 +32,16 @@ text {
   font: {{fSize}}px {{fontType}};
 }
 
+body {
+    padding-top: 60px;
+    padding-bottom: 42px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
 </style>
-{% endblock %}
-
-{% block content %}
 <body>
     <h2 style='text-align: center;'>{{title}}</h2>
-    <!-- <button type="button" class="btn btn-sm btn-primary" onclick="download()"> Download </button> -->
+    <button type="button" class="btn btn-primary" onlcick="download()">Download</button>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -47,11 +51,11 @@ var diameter = 1200,//960,
 var pack = d3.layout.pack()
     .size([diameter - 4, diameter - 4])
     .value(function(d) { 
-               d.type = '{{subB}}';
+               d.type = '{{subA}}';
                if (Math.round(Math.abs(d.size)) <=  {{fc_limit}})
                    d.type = 'neutral';
                else if (d.size < -{{fc_limit}})
-                   d.type = '{{subA}}';
+                   d.type = '{{subB}}';
                return Math.abs(d.size); 
            });
 
@@ -87,26 +91,23 @@ d3.json("{{reqFile}}", function(error, root) {
   node.filter(function(d) { return !d.children; }).append("text")
       .attr("dy", ".3em")
       .style("text-anchor", "middle")
-      .text(function(d) { 
-      			if (d.r > 5)
-      				return d.name.substring(0, d.r/3); 
-      			return "";
-      });
+      .text(function(d) { return d.name.substring(0, d.r / 3); });
 });
 
 d3.select(self.frameElement).style("height", diameter + "px");
 
-// function download(){
-//   var e = document.createElement('script');
-//   if (window.location.protocol === 'https:'){
-//     e.setAttribute('src', 'https://rawgit.com/NYTimes/svg-crowbar/gh-pages/svg-crowbar.js');
-//   }
-//   else{
-//     e.setAttribute('src', 'http://nytimes.github.com/svg-crowbar/svg-crowbar.js'); 
-//   }
-//   e.setAttribute('class', 'svg-crowbar');
-//   document.body.appendChild(e); 
-// }
+//function for download with svg crowbar
+function download(){
+  var e = document.createElement('script');
+  if (window.location.protocol === 'https:'){
+    e.setAttribute('src', 'https://rawgit.com/NYTimes/svg-crowbar/gh-pages/svg-crowbar.js');
+  }
+  else{
+    e.setAttribute('src', 'http://nytimes.github.com/svg-crowbar/svg-crowbar.js'); 
+  }
+  e.setAttribute('class', 'svg-crowbar');
+  document.body.appendChild(e); 
+}
 
 </script>
-{% endblock %}
+{ % endblock %}
