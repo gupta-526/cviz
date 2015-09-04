@@ -9,8 +9,8 @@
 circle {
   fill: {{fillColor}};
   fill-opacity: {{opacityRoot}};
-  stroke: '#000000';
-  stroke-width: 1px;
+  stroke: black;
+  stroke-width: 2px;
 }
 
 .leafS circle {
@@ -91,7 +91,7 @@ d3.json("{{reqFile}}", function(error, root) {
   node.filter(function(d) { return !d.children; }).append("text")
       .attr("dy", ".3em")
       .style("text-anchor", "middle")
-      .text(function(d) { return d.name.substring(0, d.r / 3); });
+      .text(function(d) { return d.name.substring(0, d.r); });
 });
 
 d3.select(self.frameElement).style("height", diameter + "px");
