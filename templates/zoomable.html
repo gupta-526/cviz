@@ -1,10 +1,13 @@
 {% extends "base.html" %}  
-{% block content %} 
+ 
 <!-- 
 <!DOCTYPE html>
 <meta charset="utf-8">
  -->
+ {% block head %}
 <head><title>{{title}}</title></head>
+{% endblock %}
+{% block style %}
 <style>
 
 .node {
@@ -54,24 +57,9 @@
   pointer-events: none;
   
 }
-/* /Download button */
-.download { 
-  background: #333; 
-  color: #FFF; 
-  font-weight: 900; 
-  border: 2px solid #B10000; 
-  padding: 4px; 
-  margin:4px;
-}
-
-body{
-  padding-top: 60px;
-  padding-bottom: 42px;
-  padding-left: 50px;
-  padding-right: 50px;
-  
-}
 </style>
+{% endblock %}
+{% block content %}}
 <body>
 <h2 style='text-align: center;'>{{title}}</h2>
 

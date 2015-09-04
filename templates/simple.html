@@ -1,9 +1,9 @@
-
-<!DOCTYPE html>
-<meta charset="utf-8">
+{% entends "base.html" %}
+{% block head %}
 <head><title>{{title}}</title></head>
+{%endblock %}
+{% block style %}
 <style>
-
 circle {
   fill: {{fillColor}};
   fill-opacity: {{opacityRoot}};
@@ -30,25 +30,13 @@ text {
   font: {{fSize}}px {{fontType}};
 }
 
-.download{
-  background: #333; 
-  color: #FFF; 
-  font-weight: 900; 
-  border: 2px solid #B10000; 
-  padding: 4px; 
-  margin:4px;
-}
-body{
-  padding-top: 60px;
-  padding-bottom: 42px;
-  padding-left: 50px;
-  padding-right: 50px;
-  
-}
 </style>
+{% endblock %}
+
+{% block content %}
 <body>
     <h2 style='text-align: center;'>{{title}}</h2>
-    <button type="button" class="download" onclick="download()"> Download </button>
+    <button type="button" class="btn btn-sm btn-primary" onclick="download()"> Download </button>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -100,7 +88,7 @@ d3.json("{{reqFile}}", function(error, root) {
       .style("text-anchor", "middle")
       .text(function(d) { 
       			if (d.r > 5)
-      				return d.name.substring(0, d.r/3); 
+      				return d.name.substring(0, d.r); 
       			return "";
       });
 });
@@ -120,3 +108,4 @@ function download(){
 }
 
 </script>
+{% endblock %}
