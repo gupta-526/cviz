@@ -34,12 +34,12 @@
 
 .node--leaf-{{subA}} {
   fill:{{colorA}};
-  fill-opacity: 1;
+  fill-opacity: {{opacityRoot}}+0.2;
 }
 
 .node--leaf-{{subB}} {
   fill:{{colorB}};
-  fill-opacity: 1;
+  fill-opacity: {{opacityRoot}}+0.2;
 }
 
 .label {
@@ -64,7 +64,7 @@ body{
 <body>
   <h2 style='text-align: left;'>{{title}}</h2>
   <button type="button" class="btn btn-primary" onclick="download()">Download</button>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
 
   <script>
 
