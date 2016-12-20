@@ -87,11 +87,21 @@ with app.app_context():
 					   
 		if(imageType=='simple'):
 			
-			return render_template("simple.html", **param_list)
+			return render_template("cpack_viz.html", **param_list)
 			
 		elif(imageType=='zoomable'):
 		  
 			return render_template("zoomable.html", **param_list)
+
+	@app.route('/bubble_viz', methods=['GET','POST'])	 
+	def bubble_viz():
+		filename=random_sufix()+'.txt'
+		upload_fp = os.path.join(app.config['UPLOAD_FOLDER'], upload())
+		param_list = {'title': request.form['title'],
+					   'fontType': request.form['fontList'],
+					   'reqFile': upload_fp}
+
+		return render_template("bubble_viz.html", **param_list)
 
 
 if __name__ == '__main__':
