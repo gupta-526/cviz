@@ -1,7 +1,15 @@
-env
-*.pyc
-__pycache__/
-*.DS_Store
+# Python files
+*.py[cod]
+__pycache__
+
+# Spinx
+_build
+
+# Miscellaneous
+.project
+.pydevproject
+.DS_Store
 .openshift
-.test*
-.sublime-*
+
+# app related
+uploads/*
