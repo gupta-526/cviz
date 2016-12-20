@@ -64,8 +64,8 @@ with app.app_context():
 		return ''.join([random.choice(chars) for _ in range(length)])
 		
 	#method to render template using various variables from form and the filename+path
-	@app.route('/getModelType', methods=['GET','POST'])	 
-	def getModelType():
+	@app.route('/cpackModelType', methods=['GET','POST'])	 
+	def cpackModelType():
 		filename=random_sufix()+'.json'
 		imageType = request.form['imageType']
 		process_fc_data(os.path.join(app.config['UPLOAD_FOLDER'], upload()),
