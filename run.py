@@ -40,6 +40,14 @@ with app.app_context():
 
 
 		return render_template("index.html" )
+
+	@app.route("/cpack", methods=["GET", "POST"])
+	def cpack():
+		return render_template("cpack.html")
+
+	@app.route("/bubbles", methods=["GET", "POST"])
+	def bubbles():
+		return render_template("bubble_chart.html")
 	
 	@app.route('/upload', methods=['POST'])
 	def upload():
