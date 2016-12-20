@@ -1,0 +1,121 @@
+<!--
+The extend statement tells this file inherit the general html elements from the the base.html file
+-->  
+{% extends "base.html" %}  
+{% block content %}  
+	<title> Circle Packing - Hierarchical Data Visualization </title>
+	<head>
+	</head>
+	<style>
+	.times{
+		font-family: "Times New Roman", Times, serif;
+	}
+	.georgia{
+		font-family: Georgia, serif;
+	}
+	.arial{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	.tahoma{
+		font-family:Tahoma,Geneva,sans-serif;
+	}
+	</style>
+   <form action="cpackModelType" id="userInput" method="POST" enctype="multipart/form-data">
+	<p>
+	<label>Title:</label><br>
+	<input type="text"	name="title" required > 
+	</p>
+	
+	<p title="group that is associated with a positive fold change">
+	<label>Group A :</label><br>
+	<input type="text" name="subjectA" required >
+	</p>
+	
+	<p title="group that is associated with a negative fold change"> 
+	<label>Group B:</label><br>
+	<input type="text" name="subjectB" required >
+	</p>
+		
+	<p title="Fold Change under which the functinality is considered neutral">
+	<label>Fold Change Threshold </label>
+	<input type="number" name="nLimit" min=0 value=2>
+	</p>
+	
+	<p title="Color of the circle whenever the fold change value is less than the threshold value">
+	<label>Neutral Color</label> <!-- wherever fold change is less that 4 -->
+	<input type="color" name="nColor" >
+	</p>
+	
+	<p title="Color of the root circle">
+	<label>Circle Color</label> <!-- color for the larger circles -->
+	<input type="color" name="fColor" >
+	</p>
+	
+	<p>
+	<label>Color for Group A</label>
+	<input type="color" name="aColor" >
+	</p>
+	
+	<p>
+	<label>Color for Group B</label>
+	<input type="color" name="bColor" >
+	</p>
+	
+	<p>
+	<label>Opacity of the root circle<em>(Recommended Range:(0.0-1])</em></label>
+	<input type="number" name="opacity" value=.5 step="any" min=0 max=1>
+	</p>
+	<!-- <br><br> -->
+	<!-- RADIO BUTTON GROUP-ADD -->
+	<p>
+	<radiogroup>
+	<label>Please select the type of figure </label>
+	<br>
+
+	<input type="radio" name="imageType" value="simple" checked="checked" >Circle Packing<br>
+	<input type="radio" name="imageType" value="zoomable" >Zoomable Circle Packing
+
+	</radiogroup>
+	</p>
+	<p>
+	<label> Enter a name for the url</label>
+	<input type="text" name="urlName">
+	
+	<p> 
+	<lable>Please select a font:</label>
+	<select name="fontList">
+	<option class="times" value="Times,serif"> 
+	Times New Roman
+	</option>
+	<option class="georgia" value="Georgia,serif"> 
+	Georgia
+	</option>
+	<option class="arial" value="Arial, Helvetica,sans-serif"> 
+	Arial, Helvetica
+	</option>
+	<option class="tahoma" value="Tahoma, Geneva, sans-serif"> 
+	Tahoma
+	</option>
+	</select>
+	</p>
+	
+	<p>
+	<label>Please enter a font size</label>
+	<input type="number" name="fsize" value=15 step="any" min=9>
+	</p>
+	
+	<p title="File should be a tab separated txt file with number of levels and the fold change numbers ONLY"> 
+	<label>Upload Required File (tab-separated text file) </label>
+	<br>
+	<input type="file"   name="myFiles"  required > 
+	
+	</p>
+	<!--	Buttons of the input -->
+
+	<input type="submit" value="Submit">
+	<input type="reset" value="Reset">
+		
+	</form> 
+ 	
+
+{% endblock %}
