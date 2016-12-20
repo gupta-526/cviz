@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="78.846634mm"
+   height="78.840935mm"
+   viewBox="0 0 279.37783 279.35763"
+   id="svg12786"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="bubbles.svg">
+  <defs
+     id="defs12788">
+    <clipPath
+       id="clip-flare.query.methods.gte">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.4830675"
+         id="use10035"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.gt">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.3146706"
+         id="use10023"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.iff">
+      <circle
+         style="fill:#c7e9c0"
+         r="10.37432"
+         id="use10047"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.IsA">
+      <circle
+         style="fill:#a1d99b"
+         r="17.128426"
+         id="use9879"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.HierarchicalCluster">
+      <circle
+         style="fill:#3182bd"
+         r="31.081322"
+         id="use8987"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.graph.MaxFlowMinCut">
+      <circle
+         style="fill:#6baed6"
+         r="33.586662"
+         id="use9043"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.display.DirtySprite">
+      <circle
+         style="fill:#fdd0a2"
+         r="35.65028"
+         id="use9523"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.NBodyForce">
+      <circle
+         style="fill:#74c476"
+         r="38.865307"
+         id="use9635"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.IForce">
+      <circle
+         style="fill:#74c476"
+         r="6.77492"
+         id="use9621"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.display.LineSprite">
+      <circle
+         style="fill:#fdd0a2"
+         r="15.786387"
+         id="use9537"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.Sequence">
+      <circle
+         style="fill:#c6dbef"
+         r="28.218142"
+         id="use9305"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.FunctionSequence">
+      <circle
+         style="fill:#c6dbef"
+         r="28.992764"
+         id="use9117"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.util.Dates">
+      <circle
+         style="fill:#9e9ac8"
+         r="34.38472"
+         id="use10597"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.Literal">
+      <circle
+         style="fill:#a1d99b"
+         r="13.216552"
+         id="use9891"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.Match">
+      <circle
+         style="fill:#a1d99b"
+         r="23.222481"
+         id="use9903"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.Spring">
+      <circle
+         style="fill:#74c476"
+         r="17.844301"
+         id="use9675"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.scale.QuantileScale">
+      <circle
+         style="fill:#756bb1"
+         r="18.717951"
+         id="use10491"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.eq">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.2448959"
+         id="use9999"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.mul">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.3146706"
+         id="use10131"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.add">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.2371111"
+         id="use9927"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.DragForce">
+      <circle
+         style="fill:#74c476"
+         r="12.477353"
+         id="use9593"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.scale.OrdinalScale">
+      <circle
+         style="fill:#756bb1"
+         r="23.290537"
+         id="use10477"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.flex.FlareVis">
+      <circle
+         style="fill:#31a354"
+         r="24.33585"
+         id="use9579"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.interpolate.DateInterpolator">
+      <circle
+         style="fill:#e6550d"
+         r="14.065661"
+         id="use9159"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.interpolate.ColorInterpolator">
+      <circle
+         style="fill:#e6550d"
+         r="17.161993"
+         id="use9145"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.MergeEdge">
+      <circle
+         style="fill:#3182bd"
+         r="10.339588"
+         id="use9001"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.graph.BetweennessCentrality">
+      <circle
+         style="fill:#6baed6"
+         r="22.549768"
+         id="use9015"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.CommunityStructure">
+      <circle
+         style="fill:#3182bd"
+         r="23.419912"
+         id="use8973"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.graph.LinkDistance">
+      <circle
+         style="fill:#6baed6"
+         r="28.716005"
+         id="use9029"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.StringUtil">
+      <circle
+         style="fill:#a1d99b"
+         r="24.377201"
+         id="use10371"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.Range">
+      <circle
+         style="fill:#a1d99b"
+         r="15.144432"
+         id="use10359"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.interpolate.ColorInterpolator-0">
+      <circle
+         style="fill:#e6550d"
+         r="17.161993"
+         id="use9145-6"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.interpolate.ArrayInterpolator">
+      <circle
+         style="fill:#e6550d"
+         r="16.891577"
+         id="use9131"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.IsA-9">
+      <circle
+         style="fill:#a1d99b"
+         r="17.128426"
+         id="use9879-7"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.AgglomerativeCluster">
+      <circle
+         style="fill:#3182bd"
+         r="23.803822"
+         id="use8959"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.gte-5">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.4830675"
+         id="use10035-0"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.gt-9">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.3146706"
+         id="use10023-8"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.iff-5">
+      <circle
+         style="fill:#c7e9c0"
+         r="10.37432"
+         id="use10047-1"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.HierarchicalCluster-8">
+      <circle
+         style="fill:#3182bd"
+         r="31.081322"
+         id="use8987-7"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.graph.MaxFlowMinCut-8">
+      <circle
+         style="fill:#6baed6"
+         r="33.586662"
+         id="use9043-1"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.display.DirtySprite-2">
+      <circle
+         style="fill:#fdd0a2"
+         r="35.65028"
+         id="use9523-1"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.NBodyForce-6">
+      <circle
+         style="fill:#74c476"
+         r="38.865307"
+         id="use9635-5"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.IForce-7">
+      <circle
+         style="fill:#74c476"
+         r="6.77492"
+         id="use9621-3"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.display.LineSprite-9">
+      <circle
+         style="fill:#fdd0a2"
+         r="15.786387"
+         id="use9537-1"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.Sequence-8">
+      <circle
+         style="fill:#c6dbef"
+         r="28.218142"
+         id="use9305-4"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.FunctionSequence-0">
+      <circle
+         style="fill:#c6dbef"
+         r="28.992764"
+         id="use9117-9"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.util.Dates-5">
+      <circle
+         style="fill:#9e9ac8"
+         r="34.38472"
+         id="use10597-6"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.Literal-5">
+      <circle
+         style="fill:#a1d99b"
+         r="13.216552"
+         id="use9891-2"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.Match-7">
+      <circle
+         style="fill:#a1d99b"
+         r="23.222481"
+         id="use9903-4"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.Spring-4">
+      <circle
+         style="fill:#74c476"
+         r="17.844301"
+         id="use9675-8"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.scale.QuantileScale-1">
+      <circle
+         style="fill:#756bb1"
+         r="18.717951"
+         id="use10491-6"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.eq-3">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.2448959"
+         id="use9999-3"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.mul-1">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.3146706"
+         id="use10131-7"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.add-4">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.2371111"
+         id="use9927-8"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.DragForce-3">
+      <circle
+         style="fill:#74c476"
+         r="12.477353"
+         id="use9593-0"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.scale.OrdinalScale-5">
+      <circle
+         style="fill:#756bb1"
+         r="23.290537"
+         id="use10477-6"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.flex.FlareVis-1">
+      <circle
+         style="fill:#31a354"
+         r="24.33585"
+         id="use9579-4"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.interpolate.DateInterpolator-2">
+      <circle
+         style="fill:#e6550d"
+         r="14.065661"
+         id="use9159-3"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.MergeEdge-4">
+      <circle
+         style="fill:#3182bd"
+         r="10.339588"
+         id="use9001-7"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.graph.BetweennessCentrality-9">
+      <circle
+         style="fill:#6baed6"
+         r="22.549768"
+         id="use9015-3"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.CommunityStructure-9">
+      <circle
+         style="fill:#3182bd"
+         r="23.419912"
+         id="use8973-1"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.graph.LinkDistance-4">
+      <circle
+         style="fill:#6baed6"
+         r="28.716005"
+         id="use9029-9"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.GravityForce">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.physics.GravityForce"
+         id="use9607" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.interpolate.ColorInterpolator-6">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.animate.interpolate.ColorInterpolator"
+         id="use9145-1" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.interpolate.ArrayInterpolator-3">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.animate.interpolate.ArrayInterpolator"
+         id="use9131-3" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.StringUtil-1">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.query.StringUtil"
+         id="use10371-9" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.Range-3">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.query.Range"
+         id="use10359-5" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.IsA-6">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.query.IsA"
+         id="use9879-1" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.AgglomerativeCluster-0">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.analytics.cluster.AgglomerativeCluster"
+         id="use8959-6" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.gte-1">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.query.methods.gte"
+         id="use10035-1" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.gt-2">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.query.methods.gt"
+         id="use10023-5" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.iff-57">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.query.methods.iff"
+         id="use10047-6" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.HierarchicalCluster-2">
+      <circle
+         style="fill:#3182bd"
+         r="31.081322"
+         id="use8987-0"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.graph.MaxFlowMinCut-9">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.analytics.graph.MaxFlowMinCut"
+         id="use9043-9" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.display.DirtySprite-0">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.display.DirtySprite"
+         id="use9523-4" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.NBodyForce-4">
+      <circle
+         style="fill:#74c476"
+         r="38.865307"
+         id="use9635-7"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.IForce-3">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.physics.IForce"
+         id="use9621-8" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.display.LineSprite-0">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.display.LineSprite"
+         id="use9537-7" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.Sequence-4">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.animate.Sequence"
+         id="use9305-1" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.FunctionSequence-2">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.animate.FunctionSequence"
+         id="use9117-1" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.util.Dates-9">
+      <circle
+         style="fill:#9e9ac8"
+         r="34.38472"
+         id="use10597-5"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.Literal-6">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.query.Literal"
+         id="use9891-23" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.Match-3">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.query.Match"
+         id="use9903-7" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.Spring-0">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.physics.Spring"
+         id="use9675-1" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.scale.QuantileScale-8">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.scale.QuantileScale"
+         id="use10491-62" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.eq-1">
+      <circle
+         style="fill:#c7e9c0"
+         r="9.2448959"
+         id="use9999-4"
+         cx="0"
+         cy="0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.mul-8">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.query.methods.mul"
+         id="use10131-1" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.query.methods.add-0">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.query.methods.add"
+         id="use9927-4" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.physics.DragForce-36">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.physics.DragForce"
+         id="use9593-6" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.scale.OrdinalScale-9">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.scale.OrdinalScale"
+         id="use10477-4" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.flex.FlareVis-2">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.flex.FlareVis"
+         id="use9579-1" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.animate.interpolate.DateInterpolator-8">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.animate.interpolate.DateInterpolator"
+         id="use9159-0" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.MergeEdge-7">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.analytics.cluster.MergeEdge"
+         id="use9001-6" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.graph.BetweennessCentrality-6">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.analytics.graph.BetweennessCentrality"
+         id="use9015-6" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.cluster.CommunityStructure-96">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.analytics.cluster.CommunityStructure"
+         id="use8973-2" />
+    </clipPath>
+    <clipPath
+       id="clip-flare.analytics.graph.LinkDistance-7">
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         xlink:href="#flare.analytics.graph.LinkDistance"
+         id="use9029-6" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.3107446"
+     inkscape:cx="107.20758"
+     inkscape:cy="120.51217"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5"
+     inkscape:window-width="2560"
+     inkscape:window-height="1391"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata12791">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-144.75999,-430.6354)">
+    <g
+       class="node"
+       transform="translate(254.3559,621.57126)"
+       id="g8955">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.analytics.cluster.AgglomerativeCluster"
+         r="23.803822"
+         style="fill:#3182bd" />
+      <clipPath
+         id="clipPath15132">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.analytics.cluster.AgglomerativeCluster"
+           id="use15134" />
+      </clipPath>
+      <title
+         id="title8967">flare.analytics.cluster.AgglomerativeCluster
+3,938</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(303.01126,621.57126)"
+       id="g8969">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.analytics.cluster.CommunityStructure"
+         r="23.419912"
+         style="fill:#3182bd" />
+      <clipPath
+         id="clipPath15142">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.analytics.cluster.CommunityStructure"
+           id="use15144" />
+      </clipPath>
+      <title
+         id="title8981">flare.analytics.cluster.CommunityStructure
+3,812</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(278.96277,595.87914)"
+       id="g8997">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.analytics.cluster.MergeEdge"
+         r="10.339588"
+         style="fill:#3182bd" />
+      <clipPath
+         id="clipPath15162">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.analytics.cluster.MergeEdge"
+           id="use15164" />
+      </clipPath>
+      <title
+         id="title9009">flare.analytics.cluster.MergeEdge
+743</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(278.18889,662.86873)"
+       id="g9011">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.analytics.graph.BetweennessCentrality"
+         r="22.549768"
+         style="fill:#6baed6" />
+      <clipPath
+         id="clipPath15172">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.analytics.graph.BetweennessCentrality"
+           id="use15174" />
+      </clipPath>
+      <title
+         id="title9023">flare.analytics.graph.BetweennessCentrality
+3,534</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(249.7811,567.81412)"
+       id="g9025">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.analytics.graph.LinkDistance"
+         r="28.716005"
+         style="fill:#6baed6" />
+      <clipPath
+         id="clipPath15182">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.analytics.graph.LinkDistance"
+           id="use15184" />
+      </clipPath>
+      <title
+         id="title9037">flare.analytics.graph.LinkDistance
+5,731</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(197.9463,604.898)"
+       id="g9039">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.analytics.graph.MaxFlowMinCut"
+         r="33.586662"
+         style="fill:#6baed6" />
+      <clipPath
+         id="clipPath15192">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.analytics.graph.MaxFlowMinCut"
+           id="use15194" />
+      </clipPath>
+      <title
+         id="title9055">flare.analytics.graph.MaxFlowMinCut
+7,840</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(348.82631,649.85889)"
+       id="g9113">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.animate.FunctionSequence"
+         r="28.992764"
+         style="fill:#c6dbef" />
+      <clipPath
+         id="clipPath15204">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.animate.FunctionSequence"
+           id="use15206" />
+      </clipPath>
+      <title
+         id="title9125">flare.animate.FunctionSequence
+5,842</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(340.53138,603.27569)"
+       id="g9127">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.animate.interpolate.ArrayInterpolator"
+         r="16.891577"
+         style="fill:#e6550d" />
+      <clipPath
+         id="clipPath15214">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.animate.interpolate.ArrayInterpolator"
+           id="use15216" />
+      </clipPath>
+      <title
+         id="title9139">flare.animate.interpolate.ArrayInterpolator
+1,983</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(313.08517,580.78336)"
+       id="g9141">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.animate.interpolate.ColorInterpolator"
+         r="17.161993"
+         style="fill:#e6550d" />
+      <clipPath
+         id="clipPath15224">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.animate.interpolate.ColorInterpolator"
+           id="use15226" />
+      </clipPath>
+      <title
+         id="title9153">flare.animate.interpolate.ColorInterpolator
+2,047</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(292.27697,555.61101)"
+       id="g9155">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.animate.interpolate.DateInterpolator"
+         r="14.065661"
+         style="fill:#e6550d" />
+      <clipPath
+         id="clipPath15234">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.animate.interpolate.DateInterpolator"
+           id="use15236" />
+      </clipPath>
+      <title
+         id="title9167">flare.animate.interpolate.DateInterpolator
+1,375</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(197.60202,541.66251)"
+       id="g9301">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.animate.Sequence"
+         r="28.218142"
+         style="fill:#c6dbef" />
+      <clipPath
+         id="clipPath15244">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.animate.Sequence"
+           id="use15246" />
+      </clipPath>
+      <title
+         id="title9311">flare.animate.Sequence
+5,534</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(275.55485,507.27423)"
+       id="g9519">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.display.DirtySprite"
+         r="35.65028"
+         style="fill:#fdd0a2" />
+      <clipPath
+         id="clipPath15253">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.display.DirtySprite"
+           id="use15255" />
+      </clipPath>
+      <title
+         id="title9531">flare.display.DirtySprite
+8,833</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(222.79744,503.85199)"
+       id="g9533">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.display.LineSprite"
+         r="15.786387"
+         style="fill:#fdd0a2" />
+      <clipPath
+         id="clipPath15263">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.display.LineSprite"
+           id="use15265" />
+      </clipPath>
+      <title
+         id="title9545">flare.display.LineSprite
+1,732</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(329.35599,541.0568)"
+       id="g9575">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.flex.FlareVis"
+         r="24.33585"
+         style="fill:#31a354" />
+      <clipPath
+         id="clipPath15273">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.flex.FlareVis"
+           id="use15275" />
+      </clipPath>
+      <title
+         id="title9587">flare.flex.FlareVis
+4,116</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(324.93532,503.06832)"
+       id="g9589">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.physics.DragForce"
+         r="12.477353"
+         style="fill:#74c476" />
+      <clipPath
+         id="clipPath15283">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.physics.DragForce"
+           id="use15285" />
+      </clipPath>
+      <title
+         id="title9601">flare.physics.DragForce
+1,082</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(352.35058,573.33624)"
+       id="g9603">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.physics.GravityForce"
+         r="13.86475"
+         style="fill:#74c476" />
+      <clipPath
+         id="clipPath15293">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.physics.GravityForce"
+           id="use15295" />
+      </clipPath>
+      <title
+         id="title9615">flare.physics.GravityForce
+1,336</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(382.16202,634.31817)"
+       id="g9617">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.physics.IForce"
+         r="6.77492"
+         style="fill:#74c476" />
+      <clipPath
+         id="clipPath15303">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.physics.IForce"
+           id="use15305" />
+      </clipPath>
+      <title
+         id="title9629">flare.physics.IForce
+319</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(317.76938,472.1342)"
+       id="g9671">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.physics.Spring"
+         r="17.844301"
+         style="fill:#74c476" />
+      <clipPath
+         id="clipPath15324">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.physics.Spring"
+           id="use15326" />
+      </clipPath>
+      <title
+         id="title9681">flare.physics.Spring
+2,213</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(375.27238,610.33832)"
+       id="g9875">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.query.IsA"
+         r="17.128426"
+         style="fill:#a1d99b" />
+      <clipPath
+         id="clipPath15333">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.query.IsA"
+           id="use15335" />
+      </clipPath>
+      <title
+         id="title9885">flare.query.IsA
+2,039</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(380.30291,578.96243)"
+       id="g9887">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.query.Literal"
+         r="13.216552"
+         style="fill:#a1d99b" />
+      <clipPath
+         id="clipPath15342">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.query.Literal"
+           id="use15344" />
+      </clipPath>
+      <title
+         id="title9897">flare.query.Literal
+1,214</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(378.34587,541.14238)"
+       id="g9899">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.query.Match"
+         r="23.222481"
+         style="fill:#a1d99b" />
+      <clipPath
+         id="clipPath15351">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.query.Match"
+           id="use15353" />
+      </clipPath>
+      <title
+         id="title9909">flare.query.Match
+3,748</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(346.39706,494.40028)"
+       id="g9923">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.query.methods.add"
+         r="9.2371111"
+         style="fill:#c7e9c0" />
+      <clipPath
+         id="clipPath15360">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.query.methods.add"
+           id="use15362" />
+      </clipPath>
+      <title
+         id="title9933">flare.query.methods.add
+593</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(376.76458,458.14685)"
+       id="g10019">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.query.methods.gt"
+         r="9.3146706"
+         style="fill:#c7e9c0" />
+      <clipPath
+         id="clipPath15378">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.query.methods.gt"
+           id="use15380" />
+      </clipPath>
+      <title
+         id="title10029">flare.query.methods.gt
+603</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(286.18604,462.0887)"
+       id="g10031">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.query.methods.gte"
+         r="9.4830675"
+         style="fill:#c7e9c0" />
+      <clipPath
+         id="clipPath15387">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.query.methods.gte"
+           id="use15389" />
+      </clipPath>
+      <title
+         id="title10041">flare.query.methods.gte
+625</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(262.38227,460.21942)"
+       id="g10043">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.query.methods.iff"
+         r="10.37432"
+         style="fill:#c7e9c0" />
+      <clipPath
+         id="clipPath15396">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.query.methods.iff"
+           id="use15398" />
+      </clipPath>
+      <title
+         id="title10053">flare.query.methods.iff
+748</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(353.13065,513.53693)"
+       id="g10127">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.query.methods.mul"
+         r="9.3146706"
+         style="fill:#c7e9c0" />
+      <clipPath
+         id="clipPath15405">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.query.methods.mul"
+           id="use15407" />
+      </clipPath>
+      <title
+         id="title10137">flare.query.methods.mul
+603</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(351.43109,463.49636)"
+       id="g10355">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.query.Range"
+         r="15.144432"
+         style="fill:#a1d99b" />
+      <clipPath
+         id="clipPath15414">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.query.Range"
+           id="use15416" />
+      </clipPath>
+      <title
+         id="title10365">flare.query.Range
+1,594</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(382.0441,492.23121)"
+       id="g10367">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.query.StringUtil"
+         r="24.377201"
+         style="fill:#a1d99b" />
+      <clipPath
+         id="clipPath15423">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.query.StringUtil"
+           id="use15425" />
+      </clipPath>
+      <title
+         id="title10379">flare.query.StringUtil
+4,130</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(185.76706,484.40272)"
+       id="g10473">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.scale.OrdinalScale"
+         r="23.290537"
+         style="fill:#756bb1" />
+      <clipPath
+         id="clipPath15433">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.scale.OrdinalScale"
+           id="use15435" />
+      </clipPath>
+      <title
+         id="title10485">flare.scale.OrdinalScale
+3,770</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(228.11509,468.00459)"
+       id="g10487">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.scale.QuantileScale"
+         r="18.717951"
+         style="fill:#756bb1" />
+      <clipPath
+         id="clipPath15443">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.scale.QuantileScale"
+           id="use15445" />
+      </clipPath>
+      <title
+         id="title10499">flare.scale.QuantileScale
+2,435</title>
+    </g>
+    <g
+       class="node"
+       transform="matrix(0.77606118,0,0,0.77606118,187.90456,656.61367)"
+       id="g9011-7">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.analytics.graph.BetweennessCentrality-4"
+         r="22.549768"
+         style="fill:#6baed6" />
+      <clipPath
+         id="clipPath15172-9">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.analytics.graph.BetweennessCentrality-4"
+           id="use15174-1" />
+      </clipPath>
+      <title
+         id="title9023-1">flare.analytics.graph.BetweennessCentrality
+3,534</title>
+    </g>
+    <g
+       class="node"
+       transform="translate(231.26228,669.72674)"
+       id="g9011-9">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.analytics.graph.BetweennessCentrality-8"
+         r="22.549768"
+         style="fill:#6baed6" />
+      <clipPath
+         id="clipPath15172-2">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.analytics.graph.BetweennessCentrality-8"
+           id="use15174-9" />
+      </clipPath>
+      <title
+         id="title9023-9">flare.analytics.graph.BetweennessCentrality
+3,534</title>
+    </g>
+    <g
+       class="node"
+       transform="matrix(0.72536738,0,0,0.72536738,225.16447,639.00342)"
+       id="g8997-2">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.analytics.cluster.MergeEdge-6"
+         r="10.339588"
+         style="fill:#3182bd" />
+      <clipPath
+         id="clipPath15162-0">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.analytics.cluster.MergeEdge-6"
+           id="use15164-8" />
+      </clipPath>
+      <title
+         id="title9009-5">flare.analytics.cluster.MergeEdge
+743</title>
+    </g>
+    <g
+       class="node"
+       transform="matrix(0.58029391,0,0,0.58029391,210.68706,645.57233)"
+       id="g8997-2-0">
+      <circle
+         cy="0"
+         cx="0"
+         id="flare.analytics.cluster.MergeEdge-6-0"
+         r="10.339588"
+         style="fill:#3182bd" />
+      <clipPath
+         id="clipPath15162-0-6">
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           xlink:href="#flare.analytics.cluster.MergeEdge-6-0"
+           id="use15164-8-8" />
+      </clipPath>
+      <title
+         id="title9009-5-6">flare.analytics.cluster.MergeEdge
+743</title>
+    </g>
+  </g>
+</svg>

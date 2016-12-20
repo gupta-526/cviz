@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="66.27359mm"
+   height="66.27359mm"
+   viewBox="0 0 234.82768 234.82768"
+   id="svg5268"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="cviz.svg">
+  <defs
+     id="defs5270" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="6.3141126"
+     inkscape:cx="117.41383"
+     inkscape:cy="117.41385"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5"
+     inkscape:window-width="2560"
+     inkscape:window-height="1391"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5273">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-220.05226,-473.2628)">
+    <circle
+       cy="590.67664"
+       cx="337.46609"
+       id="circle776"
+       style="fill:#ffffff;stroke:#333333;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       r="99.197304"
+       class="node" />
+    <circle
+       cy="517.76648"
+       cx="325.85358"
+       id="circle778"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="17.584827"
+       class="node node--leaf-Control" />
+    <circle
+       cy="568.79773"
+       cx="341.33789"
+       id="circle780"
+       style="fill:#ffffff;stroke:#d8d8d8"
+       r="8.5415316"
+       class="node node--leaf-neutral" />
+    <circle
+       cy="586.59833"
+       cx="346.9368"
+       id="circle782"
+       style="fill:#ffffff;stroke:#d8d8d8"
+       r="6.6140528"
+       class="node node--leaf-neutral" />
+    <circle
+       cy="597.67157"
+       cx="363.22018"
+       id="circle784"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="11.549065"
+       class="node node--leaf-Control" />
+    <circle
+       cy="523.65527"
+       cx="361.42987"
+       id="circle786"
+       style="fill:#ff0000;stroke:#d8d8d8"
+       r="16.946899"
+       class="node node--leaf-Smoke" />
+    <circle
+       cy="575.27972"
+       cx="357.48328"
+       id="circle788"
+       style="fill:#ffffff;stroke:#d8d8d8"
+       r="7.327879"
+       class="node node--leaf-neutral" />
+    <circle
+       cy="584.82159"
+       cx="328.27487"
+       id="circle790"
+       style="fill:#ffffff;stroke:#d8d8d8"
+       r="10.603645"
+       class="node node--leaf-neutral" />
+    <circle
+       cy="631.70154"
+       cx="338.58868"
+       id="circle796"
+       style="fill:#ff0000;stroke:#d8d8d8"
+       r="15.120354"
+       class="node node--leaf-Smoke" />
+    <circle
+       cy="577.55231"
+       cx="378.25357"
+       id="circle798"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="12.037871"
+       class="node node--leaf-Control" />
+    <circle
+       cy="562.00757"
+       cx="318.20529"
+       id="circle800"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="12.805255"
+       class="node node--leaf-Control" />
+    <circle
+       cy="611.95563"
+       cx="315.0379"
+       id="circle802"
+       style="fill:#ff0000;stroke:#d8d8d8"
+       r="14.084442"
+       class="node node--leaf-Smoke" />
+    <circle
+       cy="555.38"
+       cx="364.82608"
+       id="circle806"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="12.35479"
+       class="node node--leaf-Control" />
+    <circle
+       cy="571.77026"
+       cx="407.40799"
+       id="circle808"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="16.155701"
+       class="node node--leaf-Control" />
+    <circle
+       cy="585.32611"
+       cx="302.19669"
+       id="circle810"
+       style="fill:#ff0000;stroke:#d8d8d8"
+       r="13.950923"
+       class="node node--leaf-Smoke" />
+    <circle
+       cy="569.80286"
+       cx="270.85989"
+       id="circle812"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="19.491388"
+       class="node node--leaf-Control" />
+    <circle
+       cy="602.6665"
+       cx="393.91388"
+       id="circle814"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="16.030237"
+       class="node node--leaf-Control" />
+    <circle
+       cy="625.32544"
+       cx="369.98947"
+       id="circle816"
+       style="fill:#ff0000;stroke:#d8d8d8"
+       r="15.392707"
+       class="node node--leaf-Smoke" />
+    <circle
+       cy="541.19293"
+       cx="391.83899"
+       id="circle822"
+       style="fill:#ff0000;stroke:#d8d8d8"
+       r="16.628466"
+       class="node node--leaf-Smoke" />
+    <circle
+       cy="546.16107"
+       cx="339.99219"
+       id="circle824"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="12.606473"
+       class="node node--leaf-Control" />
+    <circle
+       cy="655.11078"
+       cx="302.86569"
+       id="circle826"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="26.06081"
+       class="node node--leaf-Control" />
+    <circle
+       cy="604.32385"
+       cx="340.30609"
+       id="circle828"
+       style="fill:#ffffff;stroke:#d8d8d8"
+       r="10.782534"
+       class="node node--leaf-neutral" />
+    <circle
+       cy="612.85291"
+       cx="276.22812"
+       id="circle830"
+       style="fill:#7f7f7f;stroke:#d8d8d8"
+       r="22.363468"
+       class="node node--leaf-Control" />
+    <circle
+       cy="539.01801"
+       cx="295.1734"
+       id="circle832"
+       style="fill:#ff0000;stroke:#d8d8d8"
+       r="18.208229"
+       class="node node--leaf-Smoke" />
+  </g>
+</svg>
