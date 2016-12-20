@@ -1,0 +1,210 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+<title>{{title}}</title>
+{% endblock %}
+
+{% block content %}
+<style>
+
+circle {
+  fill: {{fillColor}};
+  fill-opacity: {{opacityRoot}};
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.leafS circle {
+  fill: {{colorA}};
+  fill-opacity: 1;
+}
+
+.leafNS circle {
+  fill: {{colorB}};
+  fill-opacity: 1;
+}
+
+.leafNeutral circle {
+  fill: {{nColor}};
+  fill-opacity: 1;
+}
+
+text {
+  font: {{fSize}}px {{fontType}} sans-serif;
+  color: #000;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 42px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+</style>
+
+<body>
+    <h2 style='text-align: center;'>{{title}}</h2>
+    <button type="button" class="btn btn-primary" onlcick="download()">Download</button>
+
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script>
+var sample = "";
+var diameter = 1200/*+svg.attr("width")*/
+
+var svg = d3.select("body").append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter);
+
+var g = svg.append("g").attr("transform", "translate(0,0)");
+var format = d3.format(",d");
+
+var pack = d3.pack()
+    .size([diameter - 4, diameter - 4])
+    .padding(function(d) {return paddingDepth(d.depth);});
+
+d3.json("{{reqFile}}", function(error, root) {
+  if (error) throw error;
+
+  // in d3 v4 determining circle values has moved from
+  // the packing layout (pack()) to the more general
+  // hierarchy concept below
+  // https://stackoverflow.com/questions/39253030/using-d3-hierarchy-in-d3v4-to-create-pack-circles-from-json
+  root = d3.hierarchy(root)
+      .sum(function(d) { 
+              d.type = '{{subA}}';
+              if (Math.round(Math.abs(d.size)) <=  {{fc_limit}})
+                  d.type = 'neutral';
+              else if (d.size < -{{fc_limit}})
+                  d.type = '{{subB}}';
+              return Math.abs(d.size); 
+           })
+      .sort(function(a, b) { return b.value - a.value; });
+
+  var node = g.selectAll(".node")
+    .data(pack(root).descendants())
+    .enter().append("g")
+      .attr("class", function(d) { 
+                        //console.log(d);
+                        //if (sample == "")
+                        //    sample = d;
+                        if (d.children) 
+                            return "circle";
+                        if (d.data.type === '{{subA}}')
+                            return "leafS";
+                        if (d.data.type === '{{subB}}')
+                            return "leafNS";
+                        if (d.data.type === 'neutral')
+                            return "leafNeutral"; 
+                     });
+      // setting cx/cy on circle instead of translating each node
+      //.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+  node.append("title")
+    .text(function(d) { return d.data.name + /*(d.children ? "" :*/ ": " + format(d.value)/*)*/; });
+
+  node.append("circle")
+    .attr("cx", function(d) { return d.x; })
+    .attr("cy", function(d) { return d.y; })
+    .attr("r", function(d) { return d.r; });
+
+  var arcs = node.filter(function(d) { return d.depth <= 2; })
+
+  arcs.append("path")
+    .attr("fill","none")
+    .attr("id", function(d,i){return "s"+i;})
+    .attr("d", function(d,i) {
+        return describeArc(d.x, d.y, d.r, 100, -100)
+    } );
+
+  var arcPaths = arcs.append("g")
+    .style("fill","navy");
+  var labels = arcPaths.append("text")
+    .attr("dy", -10);
+    //.style("opacity", 0.8);
+  labels
+    .attr("font-size", function(d) {
+        if (d.depth == 1) {
+          return fontDepth(d.depth)
+        } 
+
+        Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * fontDepth(d.depth)); 
+      })
+    .style("text-anchor","middle")
+    .append("textPath")
+    .attr("xlink:href",function(d,i){return "#s"+i;})
+    .attr("startOffset",function(d,i){return "50%";})
+    .text(function(d){return d.data.name;});
+
+
+});
+
+d3.select(self.frameElement).style("height", diameter + "px");
+
+
+function fontDepth(depth) {
+    switch (depth) {
+        case 1:
+            return 30;
+        case 2:
+            return 16;
+        default:
+            return 0;
+    }
+}
+
+function paddingDepth(depth) {
+    switch (depth) {
+        case 0:
+            return 80;
+        case 1:
+            return 40;
+        default:
+            return 0;
+    }
+}
+
+// these two functions and the path text code above were adapted from
+// https://stackoverflow.com/questions/21255967/text-along-circles-in-a-d3-circle-pack-layout
+// some additional help from
+// http://www.visualcinnamon.com/2015/09/placing-text-on-arcs.html
+function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+    var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+    return {
+        x: centerX + (radius * Math.cos(angleInRadians)),
+        y: centerY + (radius * Math.sin(angleInRadians))
+    };
+}
+
+
+function describeArc(x, y, radius, startAngle, endAngle){
+    var start = polarToCartesian(x, y, radius, endAngle);
+    var end = polarToCartesian(x, y, radius, startAngle);
+    var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
+    var d = [
+        "M", start.x, start.y, 
+        "A", radius, radius, 0, 1, 1, end.x, end.y
+    ].join(" ");
+    return d;       
+}
+
+function nameToID(name){
+    return name.split(" ").join("_");
+}
+
+//function for download with svg crowbar
+function download(){
+  var e = document.createElement('script');
+  if (window.location.protocol === 'https:'){
+    e.setAttribute('src', 'https://rawgit.com/NYTimes/svg-crowbar/gh-pages/svg-crowbar-2.js');
+  }
+  else{
+    e.setAttribute('src', 'http://nytimes.github.com/svg-crowbar/svg-crowbar-2.js'); 
+  }
+  e.setAttribute('class', 'svg-crowbar');
+  document.body.appendChild(e); 
+}
+
+</script>
+
+{% endblock %}
