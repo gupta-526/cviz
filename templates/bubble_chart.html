@@ -1,0 +1,60 @@
+<!--
+The extend statement tells this file inherit the general html elements from the the base.html file
+-->  
+{% extends "base.html" %}  
+{% block content %}  
+	<title> Bubble Chart </title>
+	<head>
+	</head>
+	<style>
+	.times{
+		font-family: "Times New Roman", Times, serif;
+	}
+	.georgia{
+		font-family: Georgia, serif;
+	}
+	.arial{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	.tahoma{
+		font-family:Tahoma,Geneva,sans-serif;
+	}
+	</style>
+   <form action="bubble_viz" id="userInput" method="POST" enctype="multipart/form-data">
+	<p>
+	<label>Title:</label><br>
+	<input type="text"	name="title" required > 
+	</p>
+	<p> 
+	<lable>Please select a font:</label>
+	<select name="fontList">
+	<option class="times" value="Times,serif"> 
+	Times New Roman
+	</option>
+	<option class="georgia" value="Georgia,serif"> 
+	Georgia
+	</option>
+	<option class="arial" value="Arial, Helvetica,sans-serif"> 
+	Arial, Helvetica
+	</option>
+	<option class="tahoma" value="Tahoma, Geneva, sans-serif"> 
+	Tahoma
+	</option>
+	</select>
+	</p>
+	
+	<p title="File should be a tab separated text file with the following columns: Category, Name, Value."> 
+	<label>Upload Input File (tab-separated text file) </label>
+	<br>
+	<input type="file"   name="myFiles"  required > 
+	
+	</p>
+	<!--	Buttons of the input -->
+
+	<input type="submit" value="Submit">
+	<input type="reset" value="Reset">
+		
+	</form> 
+ 	
+
+{% endblock %}
