@@ -27,10 +27,6 @@
   fill-opacity:{{opacityRoot}};
 }
 
-.node--leaf-neutral {
-  fill:{{nColor}};
-  fill-opacity:1
-}
 
 .node--leaf-{{subA}} {
   fill:{{colorA}};
@@ -41,6 +37,12 @@
   fill:{{colorB}};
   fill-opacity: {{opacityRoot}}+0.2;
 }
+
+.node--leaf-neutral {
+  fill:{{nColor}};
+  fill-opacity:1
+}
+
 
 .label {
   font: {{fSize}}px {{fontType}};
@@ -87,11 +89,11 @@ body{
       .padding(2)
       .size([innerDiameter, innerDiameter])
       .value(function(d) { 
-                 d.type = '{{subB}}';
-                 if (Math.round(Math.abs(d.size)) <  {{fc_limit}})
+                 d.type = '{{subA}}';
+                 if (Math.round(Math.abs(d.size)) <=  {{fc_limit}})
                      d.type = 'neutral';
                  else if (d.size < -{{fc_limit}})
-                     d.type = '{{subA}}';
+                     d.type = '{{subB}}';
                  return Math.abs(d.size); 
              });    
 
