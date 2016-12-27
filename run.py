@@ -100,7 +100,7 @@ with app.app_context():
 		upload_fp = upload()
 		param_list = {'title': request.form['title'],
 					   'fontType': request.form['fontList'],
-					   'reqFile': upload_fp}
+					   'reqFile': os.path.join('/uploads',filename}
 
 		return render_template("bubble_viz.html", **param_list)
 
