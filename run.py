@@ -95,12 +95,12 @@ with app.app_context():
 
 	@app.route('/bubble_viz', methods=['GET','POST'])	 
 	def bubble_viz():
-		filename=random_sufix()+'.txt'
-		upload_fp = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+		# filename=random_sufix()+'.txt'
+		upload_fp = os.path.join(app.config['UPLOAD_FOLDER'], upload())
 		upload_fp = upload()
 		param_list = {'title': request.form['title'],
 					   'fontType': request.form['fontList'],
-					   'reqFile': os.path.join('/uploads',filename}
+					   'reqFile': os.path.join('/uploads',upload_fp}
 
 		return render_template("bubble_viz.html", **param_list)
 
