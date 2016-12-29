@@ -54,7 +54,7 @@ function row(d) {
   };
 }
 
-d3.tsv("/uploads/bubble_test.txt", row, function(error, classes) {
+d3.tsv("{{reqFile}}", row, function(error, classes) {
   if (error) throw error;
 
   var root = d3.hierarchy({children: classes})
